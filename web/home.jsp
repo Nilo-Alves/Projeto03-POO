@@ -5,10 +5,10 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ page import="Cadastros.Admin"%>
+
 <%@ page import="java.io.*,java.util.*" %>
 
-<%Admin admin = new Admin();%>
+
 <!DOCTYPE html>
 <html>
 
@@ -22,13 +22,8 @@
        
        
        
-        <% if(admin.logado == false) { %> 
 
         <%@include file="WEB-INF/jspf/header.jspf" %>
-        <%} else if (admin.logado == true) { %>
-
-        <%@include file="WEB-INF/jspf/headerLogado.jspf" %>
-        <%}%>
         
         
         
@@ -214,11 +209,14 @@
                 try {
                     if (request.getParameter("usuario-login")!= null || request.getParameter("senha-login")!= null){
                     
-                    if (request.getParameter("usuario-login").equals(user) || request.getParameter("senha-login").equals(password)){         
+                    if (request.getParameter("usuario-login").equals(user) || request.getParameter("senha-login").equals(password)){
                     
-                    %>
-                         admin.logado = true;         
-                    <%
+                    
+                 %>
+                         
+<!--                     <script>window.location = "home.jsp";</script>-->
+                     
+                 <%
                      }
                      if (!request.getParameter("usuario-login").equals(user) || !request.getParameter("senha-login").equals(password)){
                              %>
