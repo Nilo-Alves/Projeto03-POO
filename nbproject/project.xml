@@ -8,6 +8,7 @@
             <web-module-libraries/>
             <web-module-additional-libraries/>
             <source-roots>
+                <root id="src.Test%20Packages.dir"/>
                 <root id="src.Source%20Packages.dir"/>
                 <root id="src.dir" name="src"/>
             </source-roots>
