@@ -40,8 +40,8 @@ public class Cliente {
     }
     
     
-    public Cliente ConsultaCliente(Cliente cliente){
-        return db.Select(cliente.getCpf());
+    public Cliente ConsultaCliente(String cpf){
+        return db.Select(cpf);
     }
     
     public String getNome() {

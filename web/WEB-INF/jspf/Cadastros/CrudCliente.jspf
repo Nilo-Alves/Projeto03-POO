@@ -1,17 +1,17 @@
 <%-- any content can be specified here e.g.: --%>
 <%@ page pageEncoding="UTF-8" %>
-
+<%@page import ="Cadastros.Cliente" %>
 
 <form>
-    <a href="selecionaOperacao"></a>
-    <input type="submit" name="botaoRegistrar" value="Registrar"/>
-        <input type="submit" name="botaoAlterar" value="Alterar"/>
-        <input type="submit" name="botaoPesquisar" value="Pesquisar"/>
-        <input type="submit" name="botaoDeletar" value="Deletar"/>
-        <input type="submit" name="botaoListar" value="Listar"/>
+    <input type="submit" name="opcaoRegistrar" value="Registrar"/>
+    <input type="submit" name="opcaoAlterar" value="Alterar"/>
+    <input type="submit" name="opcaoPesquisar" value="Pesquisar"/>
+    <input type="submit" name="opcaoDeletar" value="Deletar"/>
+    <input type="submit" name="opcaoListar" value="Listar"/>
         <%
     try{
-        if(request.getParameter("botaoRegistrar") != null){
+        Cliente cli = new Cliente();
+        if(request.getParameter("opcaoRegistrar") != null){
             %>
             
             <h2>Registrar</h2>
@@ -27,11 +27,20 @@
             <input type="text" name="telefoneCliente"/>
             <h4>Email</h4>
             <input type="text" name="emailCliente"/>
-            
-            
-        <%}
+            <input type="submit" name="Registrar" value="Concluir Operação"/>
+        <%
+            if(request.getParameter("Registrar") != null){
+                Cliente cliente = new Cliente(request.getParameter("nomeCliente"), 
+                        request.getParameter("cpfCliente"), 
+                        request.getParameter("enderecoCliente"),
+                        request.getParameter("telefoneCliente"), 
+                        request.getParameter("rgCliente"),
+                        request.getParameter("emailCliente"));
+                cliente.RegistraCliente(cliente);
+            }
+        }
         
-        else if(request.getParameter("botaoAlterar") != null){
+        else if(request.getParameter("opcaoAlterar") != null){
             %>
             <h2>Alterar</h2>
             <h2>Registrar</h2>
@@ -47,27 +56,37 @@
             <input type="text" name="telefoneCliente"/>
             <h4>Email</h4>
             <input type="text" name="emailCliente"/>
+            <input type="submit" name="opcaoRegistrar" value="Registrar"/>
+
         <%}
-        else if(request.getParameter("botaoPesquisar") != null){
+        else if(request.getParameter("opcaoPesquisar") != null){
             %>
             <h2>Pesquisar</h2>
             <h4>CPF</h4>
             <input type="text" name="cpfCliente"/>
+            <input type="submit" name="opcaoRegistrar" value="Registrar"/>
             
-        <%}
-        else if(request.getParameter("botaoDeletar") != null){
+        <%
+            if(request.getParameter("Registrar") != null){
+                Cliente cliente = cli.ConsultaCliente(request.getParameter("cpfCliente"));
+                
+                
+            }
+        }
+        else if(request.getParameter("opcaoDeletar") != null){
             %>
             <h2>Deletar</h2>
             <h4>CPF</h4>
             <input type="text" name="cpfCliente"/>
+            <input type="submit" name="opcaoRegistrar" value="Registrar"/>
         <%}
-        else if(request.getParameter("botaoListar") != null){
+        else if(request.getParameter("opcaoListar") != null){
             %>
             <h2>Listar</h2>
         <%}
     }
-    catch(Exception ex){
+    catch(Exception ex){%>
         
-    }
-%>
+    <%}%>
+
 </form>
