@@ -92,7 +92,7 @@ $(document).ready(function(){
    $(document).scroll(function() { 
       scroll_start = $(this).scrollTop();
 
-      if(scroll_start > offset.top) { //quando scrolla
+      if(scroll_start != offset.top) { //quando scrolla
           $('.navbar').css('background', 'rgba(252, 140, 136, 0.8)');
           $('.navbar').css('opacity', '50%');
           $('nav.navbar .navbar-nav .nav-item a').css('color', 'black');
