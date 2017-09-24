@@ -1,0 +1,73 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+
+
+<form>
+    <a href="selecionaOperacao"></a>
+    <input type="submit" name="botaoRegistrar" value="Registrar"/>
+        <input type="submit" name="botaoAlterar" value="Alterar"/>
+        <input type="submit" name="botaoPesquisar" value="Pesquisar"/>
+        <input type="submit" name="botaoDeletar" value="Deletar"/>
+        <input type="submit" name="botaoListar" value="Listar"/>
+        <%
+    try{
+        if(request.getParameter("botaoRegistrar") != null){
+            %>
+            
+            <h2>Registrar</h2>
+            <h4>Nome</h4>
+            <input type="text" name="nomeCliente"/>
+            <h4>RG</h4>
+            <input type="text" name="rgCliente"/>
+            <h4>CPF</h4>
+            <input type="text" name="cpfCliente"/>
+            <h4>Endereço</h4>
+            <input type="text" name="enderecoCliente"/>
+            <h4>Telefone</h4>
+            <input type="text" name="telefoneCliente"/>
+            <h4>Email</h4>
+            <input type="text" name="emailCliente"/>
+            
+            
+        <%}
+        
+        else if(request.getParameter("botaoAlterar") != null){
+            %>
+            <h2>Alterar</h2>
+            <h2>Registrar</h2>
+            <h4>Nome</h4>
+            <input type="text" name="nomeCliente"/>
+            <h4>RG</h4>
+            <input type="text" name="rgCliente"/>
+            <h4>CPF</h4>
+            <input type="text" name="cpfCliente"/>
+            <h4>Endereço</h4>
+            <input type="text" name="enderecoCliente"/>
+            <h4>Telefone</h4>
+            <input type="text" name="telefoneCliente"/>
+            <h4>Email</h4>
+            <input type="text" name="emailCliente"/>
+        <%}
+        else if(request.getParameter("botaoPesquisar") != null){
+            %>
+            <h2>Pesquisar</h2>
+            <h4>CPF</h4>
+            <input type="text" name="cpfCliente"/>
+            
+        <%}
+        else if(request.getParameter("botaoDeletar") != null){
+            %>
+            <h2>Deletar</h2>
+            <h4>CPF</h4>
+            <input type="text" name="cpfCliente"/>
+        <%}
+        else if(request.getParameter("botaoListar") != null){
+            %>
+            <h2>Listar</h2>
+        <%}
+    }
+    catch(Exception ex){
+        
+    }
+%>
+</form>
