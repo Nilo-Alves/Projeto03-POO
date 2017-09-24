@@ -8,9 +8,15 @@
 <!DOCTYPE html>
 <html>
 
-<%@include file="WEB-INF/jspf/header.jspf" %>
+    <head>
+        <title>HOME | Smart Data</title>
+        <%@include file="WEB-INF/jspf/head.jspf" %>
+        
+    </head>
 
-
+    <body>
+        <%@include file="WEB-INF/jspf/header.jspf" %>
+        
 	<div class="jumbotron jumbotron-fluid">
   <div class="container">
     <h1 class="display-3">SMART DATA</h1>
@@ -149,7 +155,7 @@
             <div class="social">
               <a class="fa fa-facebook " href="#" target="_blank" href="#"></a>
               <a class="fa fa-linkedin" href="#" target="_blank" href="#"></a>
-              <a class="fa fa-github" href="#" target="_blank" href="#"></a>
+              <a class="fa fa-github" href="https://github.com/rafaelsansousa12" target="_blank" href="#"></a>
             </div>
         </div>
         </div>
