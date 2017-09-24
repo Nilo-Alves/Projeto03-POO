@@ -1,6 +1,5 @@
 <%-- any content can be specified here e.g.: --%>
 <%@ page pageEncoding="UTF-8" %>
-
 <div class="container-fluid navegacao">
 <nav class="navbar fixed-top navbar-toggleable-md navbar-light">
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,12 +15,12 @@
         <a class="nav-link" href="#second-block"><b>SOBRE</b></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#fourt-block"><b>EQUIPE</b></a>
+        <a class="nav-link" href="#fourth-block"><b>EQUIPE</b></a>
       </li>
     </ul>
 
     <span class="navbar-text">
-      <button type="button" id="btn-nav" class="btn" data-toggle="modal" data-target="#myModal"><a><i style="position:relative; bottom: 2px;" class="fa fa-user fa-lg" aria-hidden="true"></i> LOGIN</a></button>
+      <button type="button" id="btn-nav" class="btn" data-toggle="modal" data-target="#myModal"><a><i style="position:relative; bottom: 2px;" class="fa fa-power-off fa-lg" aria-hidden="true"></i> SAIR</a></button>
     </span>
     
   </div>

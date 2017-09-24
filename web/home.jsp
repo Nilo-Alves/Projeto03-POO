@@ -5,6 +5,10 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page import="Cadastros.Admin"%>
+<%@ page import="java.io.*,java.util.*" %>
+
+<%Admin admin = new Admin();%>
 <!DOCTYPE html>
 <html>
 
@@ -15,7 +19,18 @@
     </head>
 
     <body>
+       
+       
+       
+        <% if(admin.logado == false) { %> 
+
         <%@include file="WEB-INF/jspf/header.jspf" %>
+        <%} else if (admin.logado == true) { %>
+
+        <%@include file="WEB-INF/jspf/headerLogado.jspf" %>
+        <%}%>
+        
+        
         
 	<div class="jumbotron jumbotron-fluid">
   <div class="container">
@@ -178,17 +193,46 @@
         <form>
 		  <div class="form-group">
 		    <label for="usuario-login">Usuário</label>
-		    <input type="text" class="form-control" id="usuario-login" name="usuario-login">
+		    <input required type="text" class="form-control" id="usuario-login" name="usuario-login">
 		  </div>
 		  <div class="form-group">
 		    <label for="senha-login">Senha</label>
-		    <input type="password" class="form-control" id="senha-login" name="senha-login">
+		    <input required type="password" class="form-control" id="senha-login" name="senha-login">
 		  </div>
-		</form>
+		
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        <button type="submit" class="btn btn-success">LOGAR</button>
+    </form>
+          <%    String user = "admin";
+                String password = "admin";
+                
+                
+                
+                
+                try {
+                    if (request.getParameter("usuario-login")!= null || request.getParameter("senha-login")!= null){
+                    
+                    if (request.getParameter("usuario-login").equals(user) || request.getParameter("senha-login").equals(password)){         
+                    
+                    %>
+                         admin.logado = true;         
+                    <%
+                     }
+                     if (!request.getParameter("usuario-login").equals(user) || !request.getParameter("senha-login").equals(password)){
+                             %>
+                             <script> alert("Usuário ou senha incorretos");</script>
+                             <%
+                                 
+                        }
+                    } 
+                }
+                catch (Exception ex) {
+                   
+                    }
+                 %>
+             
       </div>
     </div>
   </div>
