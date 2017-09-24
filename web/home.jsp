@@ -125,12 +125,40 @@
 </div>
 
 <div class="container-fluid" id="fourth-block">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+  <h2>NOSSA EQUIPE</h2>
+  <div class="row">
+    <div class="col-sm-3" id="primeiro-membro">
+      <div class="divisoria">
+        <img src="vinicius.png" height="350" width="300">
+        <div class="txt-membro">
+            <h4>Vinícius Lima</h4>
+            <h4>Front-End Developer</h4>
+            <h5>Desenvolveu a parte visual das páginas</h5>
+            <div class="social">
+              <a class="fa fa-facebook " href="https://www.facebook.com/vinicius.lima.1671" target="_blank" href="#"></a>
+              <a class="fa fa-linkedin" href="https://www.linkedin.com/in/vin%C3%ADcius-lima-5b5b9a138/" target="_blank" href="#"></a>
+              <a class="fa fa-github" href="https://github.com/ViniciusLima5" target="_blank" href="#"></a>
+            </div>
+        </div>
+        </div>
+      </div>
+    
+
+    <div class="col-sm-3 membro-equipe" id="segundo-membro">
+       
+      
+    </div>
+
+    <div class="col-sm-3 membro-equipe" id="terceiro-membro">
+      <h4>3 Membro</h4>
+    </div>
+
+    <div class="col-sm-3 membro-equipe" id="quarto-membro">
+      <h4>4 Membro</h4>
+    </div>
+    
+  </div>
 
 </div>
 
@@ -143,10 +171,24 @@
 
 var flag = false;
 
+
+// $(".divisoria").hover(function() {
+  
+//   $(".txt-membro").removeClass('hidden2');
+//   $(".txt-membro").removeClass('hidden');
+
+//   $(".txt-membro").addClass('animated fadeIn');
+// }, function() {
+//   $(".txt-membro").addClass('hidden2');
+//   $(".txt-membro").addClass('hidden');
+
+// });
+
+
 //Animações ao scrollar
  $(window).on('scroll', function() {
              var y_scroll_pos = window.pageYOffset;
-             var scroll_pos_test = 300;
+             var scroll_pos_test = 475;
 
               if(y_scroll_pos > scroll_pos_test) {
 
@@ -161,7 +203,7 @@ var flag = false;
                 $("#txt-delete").addClass('animated fadeInDown');
               }
 
-              var scroll_pos_test = 320;
+              var scroll_pos_test = 550;
 
               if (y_scroll_pos > scroll_pos_test) {
                 $("#desc-create").removeClass('hidden');
