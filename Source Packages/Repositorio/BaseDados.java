@@ -1,6 +1,7 @@
+package Repositorio;
 
 import java.util.HashMap;
-import java.util.Map;
+
 
 public class BaseDados {
     
@@ -32,3 +33,4 @@ public class BaseDados {
     }
     
 }
+
