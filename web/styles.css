@@ -14,7 +14,7 @@ html {
 
 
 body{
-	background: black;  /* fallback for old browsers */
+	  /* fallback for old browsers */
 	background: -webkit-linear-gradient(to right, #ef473a, #cb2d3e);  /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to right,#ff9966, #ff5e62); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	margin: 0;
@@ -28,7 +28,7 @@ h1 {
 	color: white;
 }
 
- .navegacao {
+.navegacao {
  	margin-bottom: 15px;
  	vertical-align: middle;
 }
@@ -85,12 +85,16 @@ nav.navbar .navbar-brand{
 }
 
 #second-block {
-	background-color: rgba(255, 255, 255, 0.6);	
+	background-color: rgba(255, 255, 255, 0.3);	
 }
 
 
 .hidden {
 	visibility: hidden;
+}
+
+.hidden2 {
+	display: none;
 }
 
 .letra-crud {
@@ -111,7 +115,7 @@ nav.navbar .navbar-brand{
 }
 
 #third-block {
-	background-color: rgba(255, 255, 255, 0.4);
+	background-color: rgba(255, 255, 255, 0.6);
 	padding-top: 80px;
 	padding-bottom: 80px;
 	overflow: hidden;
@@ -145,5 +149,81 @@ nav.navbar .navbar-brand{
 }
 
 #fourth-block {
-	background-color: rgba(255, 255, 255, 0.2);
+	background-color: rgba(255, 255, 255, 0.8);
+	padding-top: 50px;
+	padding-bottom: 80px;
+	text-align: center;
+}
+
+#fourth-block h2 {
+	font-size: 300%;
+	padding-bottom: 55px;
+}
+
+.membro-equipe {
+	
+}
+
+.divisoria {
+	background-color: none;
+	border: 2px solid black;
+	width: 100%;
+	max-height: 75%;
+    transition: max-height 0.15s ease-out;
+    overflow: hidden;
+}
+
+.divisoria:hover {
+	max-height: 1000px;
+    transition: max-height 0.25s ease-in;
+}
+
+.divisoria img {
+
+	
+	border: 1px solid black;
+	margin: auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+
+}
+
+
+.txt-membro {
+	
+}
+.social [class*="fa fa-"] {
+    background-color: #333;
+    border-radius: 30px;
+    color: #fff;
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+    margin: auto 3px;
+    width: 35px;
+    font-size: 25px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.5s ease 0s;
+    margin-bottom: 10px;
+}
+
+#primeiro-membro:hover .social .fa-facebook{
+	background-color: #3b5998;
+}
+
+#primeiro-membro:hover .social .fa-github{
+	background-color: #6e5494;
+}
+
+#primeiro-membro:hover .social .fa-linkedin{
+	background-color: #0077B5;
+}
+
+#segundo-membro:hover .social .fa-facebook{
+	background-color: #3b5998;
+}
+
+#segundo-membro:hover .social .fa-github{
+	background-color: #6e5494;
 }
