@@ -1,0 +1,3 @@
+Criei esse arquivo só para a pasta "Java" aparecer, parece que mesmo criando ela localmente, 
+por ela estar vazia, acaba que não subindo na hora de enviar... Então criei uma pasta pelo github mesmo, contendo
+esse arquivo de texto.
