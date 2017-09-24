@@ -48,7 +48,7 @@ public class Fornecedor {
         db.Delete(Integer.toString(cnpj), fornecedor);
     }
     
-    public Fornecedor ConsultaFornecedor (Fornecedor fornecedor){
+    public Fornecedor ConsultaFornecedor (int cnpj){
         return db.Select(Integer.toString(cnpj));
     }
     
