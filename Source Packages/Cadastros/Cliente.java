@@ -1,21 +1,12 @@
 package Cadastros;
 
 
-import Repositorio.BaseDados;
+import Repositorio.BaseDadosCliente;
 import java.util.HashMap;
-import java.util.Objects;
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-/**
- *
- * @author vitor
- */
 public class Cliente {
     
+    BaseDadosCliente db = new BaseDadosCliente();
     private String nome;
     private String cpf;
     private String endereco;
@@ -32,8 +23,24 @@ public class Cliente {
         this.email = email;
     }
   
-    public void ClientToDb(){
-        BaseDados db = new BaseDados();
+    public void RegistraCliente(Cliente cliente){
+        
+        db.Insert(cliente.getCpf(), cliente);
+    }
+    
+    public void AlteraCliente(Cliente cliente){
+        db.Update(cliente.getCpf(), cliente);
+    }
+    
+    
+    public void RemoveCliente(Cliente cliente){
+        
+        db.Delete(cliente.getCpf(), cliente);
+    }
+    
+    
+    public Object ConsultaCliente(Cliente cliente){
+        return db.Select(cliente.getCpf());
     }
     
     public String getNome() {
