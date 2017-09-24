@@ -132,9 +132,9 @@
       <div class="divisoria">
         <img src="vinicius.png" height="350" width="300">
         <div class="txt-membro">
-            <h4>Vinícius Lima</h4>
+            <h4><span id="letra-membro">V</span>inícius <span id="letra-membro">L</span>ima</h4>
             <h4>Front-End Developer</h4>
-            <h5>Desenvolveu a parte visual das páginas</h5>
+            
             <div class="social">
               <a class="fa fa-facebook " href="https://www.facebook.com/vinicius.lima.1671" target="_blank" href="#"></a>
               <a class="fa fa-linkedin" href="https://www.linkedin.com/in/vin%C3%ADcius-lima-5b5b9a138/" target="_blank" href="#"></a>
@@ -146,16 +146,52 @@
     
 
     <div class="col-sm-3 membro-equipe" id="segundo-membro">
-       
+        <div class="divisoria">
+        <img src="nilo.jpg" height="350" width="300">
+        <div class="txt-membro">
+            <h4><span id="letra-membro">N</span>ilo <span id="letra-membro">F</span>rancisco</h4>
+            <h4>Back-End Developer</h4>
+            
+            <div class="social">
+              <a class="fa fa-facebook " href="https://www.facebook.com/nilo.francisco.94" target="_blank" href="#"></a>
+              <a class="fa fa-linkedin" href="https://www.linkedin.com/in/nilofrancisco/" target="_blank" href="#"></a>
+              <a class="fa fa-github" href="ttps://github.com/Nilo-Alves/" target="_blank" href="#"></a>
+            </div>
+        </div>
+        </div>
       
     </div>
 
     <div class="col-sm-3 membro-equipe" id="terceiro-membro">
-      <h4>3 Membro</h4>
+       <div class="divisoria">
+        <img src="vitor.jpg" height="350" width="300">
+        <div class="txt-membro">
+            <h4><span id="letra-membro">V</span>itor <span id="letra-membro">Y</span>ugulis</h4>
+            <h4>Back-End Developer</h4>
+            
+            <div class="social">
+              <a class="fa fa-facebook " href="https://www.facebook.com/thevborges" target="_blank" href="#"></a>
+              <a class="fa fa-linkedin" href="https://www.linkedin.com/in/vitoryugulis/" target="_blank" href="#"></a>
+              <a class="fa fa-github" href="https://github.com/vitoryugulis" target="_blank" href="#"></a>
+            </div>
+        </div>
+        </div>
     </div>
 
     <div class="col-sm-3 membro-equipe" id="quarto-membro">
-      <h4>4 Membro</h4>
+       <div class="divisoria">
+        <img src="rafael.jpg" height="350" width="300">
+        <div class="txt-membro">
+            <h4><span id="letra-membro">R</span> afael <span id="letra-membro">S</span>ousa</h4>
+            <h4>Back-End Developer</h4>
+            
+            <div class="social">
+              <a class="fa fa-facebook " href="#" target="_blank" href="#"></a>
+              <a class="fa fa-linkedin" href="#" target="_blank" href="#"></a>
+              <a class="fa fa-github" href="#" target="_blank" href="#"></a>
+            </div>
+        </div>
+        </div>
     </div>
     
   </div>

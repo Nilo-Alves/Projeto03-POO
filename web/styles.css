@@ -168,7 +168,7 @@ nav.navbar .navbar-brand{
 	background-color: none;
 	border: 2px solid black;
 	width: 100%;
-	max-height: 75%;
+	max-height: 85%;
     transition: max-height 0.15s ease-out;
     overflow: hidden;
 }
@@ -189,8 +189,8 @@ nav.navbar .navbar-brand{
 }
 
 
-.txt-membro {
-	
+#letra-membro {
+	font-size: 225%;
 }
 .social [class*="fa fa-"] {
     background-color: #333;
@@ -226,4 +226,40 @@ nav.navbar .navbar-brand{
 
 #segundo-membro:hover .social .fa-github{
 	background-color: #6e5494;
+}
+
+#segundo-membro:hover .social .fa-facebook{
+	background-color: #3b5998;
+}
+
+#segundo-membro:hover .social .fa-github{
+	background-color: #6e5494;
+}
+
+#segundo-membro:hover .social .fa-linkedin{
+	background-color: #0077B5;
+}
+
+#terceiro-membro:hover .social .fa-facebook{
+	background-color: #3b5998;
+}
+
+#terceiro-membro:hover .social .fa-github{
+	background-color: #6e5494;
+}
+
+#terceiro-membro:hover .social .fa-linkedin{
+	background-color: #0077B5;
+}
+
+#quarto-membro:hover .social .fa-facebook{
+	background-color: #3b5998;
+}
+
+#quarto-membro:hover .social .fa-github{
+	background-color: #6e5494;
+}
+
+#quarto-membro:hover .social .fa-linkedin{
+	background-color: #0077B5;
 }
