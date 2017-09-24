@@ -18,11 +18,15 @@
       <li class="nav-item">
         <a class="nav-link" href="#fourth-block"><b>EQUIPE</b></a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="cliente.jsp"><b>GERENCIAR CLIENTES</b></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="fornecedor.jsp"><b>GERENCIAR FORNECEDORES</b></a>
+      </li>
     </ul>
 
-    <span class="navbar-text">
-      <button type="button" id="btn-nav" class="btn" data-toggle="modal" data-target="#myModal"><a><i style="position:relative; bottom: 2px;" class="fa fa-user fa-lg" aria-hidden="true"></i> LOGIN</a></button>
-    </span>
+    
     
   </div>
 </nav>

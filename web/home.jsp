@@ -6,7 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<%@ page import="java.io.*,java.util.*" %>
+
 
 
 <!DOCTYPE html>
@@ -214,7 +214,7 @@
                     
                  %>
                          
-<!--                     <script>window.location = "home.jsp";</script>-->
+                     <script>window.location = "menu.jsp";</script>
                      
                  <%
                      }
