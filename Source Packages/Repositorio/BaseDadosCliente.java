@@ -10,7 +10,7 @@ public class BaseDadosCliente {
     // remoção ou atualização, utilize as funções a seguir, preenchendo os parametros corretamente.
     // Qualquer coisa é só perguntar no grupo.
 
-    private HashMap<String, Object> db;
+    private HashMap<String, Cliente> db;
     
     public BaseDadosCliente(){
         db = new HashMap<>();
@@ -29,7 +29,7 @@ public class BaseDadosCliente {
         db.replace(index, cliente);
     }
     
-    public Object Select(String index){
+    public Cliente Select(String index){
         return db.get(index);
     }
     

@@ -1,8 +1,6 @@
 package Cadastros;
 
 import Repositorio.BaseDadosCliente;
-import java.util.HashMap;
-import java.util.Objects;
 
 public class Cliente {
     
@@ -14,6 +12,9 @@ public class Cliente {
     private String rg;
     private String email;
 
+    public Cliente(){
+        Cliente cli = new Cliente();
+    }
     public Cliente(String nome, String cpf, String endereco, String telefone, String rg, String email) {
         this.nome = nome;
         this.cpf = cpf;
@@ -39,7 +40,7 @@ public class Cliente {
     }
     
     
-    public Object ConsultaCliente(Cliente cliente){
+    public Cliente ConsultaCliente(Cliente cliente){
         return db.Select(cliente.getCpf());
     }
     

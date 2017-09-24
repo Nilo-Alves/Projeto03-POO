@@ -1,8 +1,6 @@
 package Cadastros;
 
 import Repositorio.BaseDadosFornecedor;
-import java.util.HashMap;
-import java.util.Objects;
 
 public class Fornecedor {
     
