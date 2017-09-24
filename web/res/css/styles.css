@@ -40,7 +40,7 @@ h1 {
 
 nav.navbar .navbar-nav .nav-item a {
 	font-size: 150%;
-	
+	padding-right: 30px;
 	padding-top: 25px;	
 }
 
@@ -309,16 +309,4 @@ nav.navbar .navbar-brand{
 #btn-nav:hover {
 	background: rgba(255, 255, 255, 0.6);
 	cursor: pointer;
-}
-
-.modal {
- overflow-y: auto;
-}
-
-.modal-open {
- overflow: auto;
-}
-
-.modal-open[style] {
-padding-right: 0px !important;
 }
