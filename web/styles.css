@@ -265,3 +265,25 @@ nav.navbar .navbar-brand{
 #quarto-membro:hover .social .fa-linkedin{
 	background-color: #0077B5;
 }
+
+#footer {
+	background-color: none;
+	color: black;
+	float: left;
+	text-align: center;
+	width: 100%;
+	text-decoration: none;
+}
+
+#footer h4 {
+	display: inline-block;
+	margin: 0;
+	padding: 25px 10px 25px 0px;
+	vertical-align: middle;
+	font-size: 100%;
+	color: black;
+}
+
+#footer h4:hover {
+	color: brown;
+}
