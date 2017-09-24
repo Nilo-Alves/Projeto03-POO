@@ -129,7 +129,7 @@
   <h2>NOSSA EQUIPE</h2>
   <div class="row">
     <div class="col-sm-3" id="primeiro-membro">
-      <div class="divisoria">
+      <div class="divisoria hidden">
         <img src="vinicius.png" height="350" width="300">
         <div class="txt-membro">
             <h4><span id="letra-membro">V</span>inícius <span id="letra-membro">L</span>ima</h4>
@@ -146,7 +146,7 @@
     
 
     <div class="col-sm-3 membro-equipe" id="segundo-membro">
-        <div class="divisoria">
+        <div class="divisoria hidden">
         <img src="nilo.jpg" height="350" width="300">
         <div class="txt-membro">
             <h4><span id="letra-membro">N</span>ilo <span id="letra-membro">F</span>rancisco</h4>
@@ -163,7 +163,7 @@
     </div>
 
     <div class="col-sm-3 membro-equipe" id="terceiro-membro">
-       <div class="divisoria">
+       <div class="divisoria hidden">
         <img src="vitor.jpg" height="350" width="300">
         <div class="txt-membro">
             <h4><span id="letra-membro">V</span>itor <span id="letra-membro">Y</span>ugulis</h4>
@@ -179,7 +179,7 @@
     </div>
 
     <div class="col-sm-3 membro-equipe" id="quarto-membro">
-       <div class="divisoria">
+       <div class="divisoria hidden">
         <img src="rafael.jpg" height="350" width="300">
         <div class="txt-membro">
             <h4><span id="letra-membro">R</span> afael <span id="letra-membro">S</span>ousa</h4>
@@ -284,6 +284,15 @@ var flag = false;
                 $("#txt-grafico").addClass('animated fadeInRight');
                 $("#btn-grafico").addClass('animated fadeInRight');
                }
+
+               var scroll_pos_test = 1700;
+
+               if (y_scroll_pos > scroll_pos_test) {
+                $(".divisoria").removeClass('hidden');
+                $(".divisoria").addClass('animated fadeIn');
+              }
+
+
 
            });
 
