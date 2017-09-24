@@ -1,0 +1,33 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+
+<form>
+    <a href="selecionaOperacao"></a>
+    <input type="submit" name="botaoRegistrar" value="Registrar"/>
+        <input type="submit" name="botaoAlterar" value="Alterar"/>
+        <input type="submit" name="botaoPesquisar" value="Pesquisar"/>
+        <input type="submit" name="botaoDeletar" value="Deletar"/>
+        <input type="submit" name="botaoListar" value="Listar"/>
+        <%
+    try{
+        if(request.getParameter("botaoRegistrar") != null){
+            %>
+
+            <h2>Registrar</h2>
+            <h4>Nome</h4>
+            <input type="text" name="nomeFornecedor"/>
+            <h4>CNPJ</h4>
+            <input type="number" name="cnpjFornecedor" />
+            <h4>Endereço</h4>
+            <input type="text" name="enderecoFornecedor" />
+            <h4>Número</h4>
+            <input type="number" name="numeroFornecedor" />
+            <h4>CEP</h4>
+            <input type="number" name="cepFornecedor" />
+            <h4>Complemento</h4>
+            <input type="text" name="complementoFornecedor" />
+            <h4>CNPJ</h4>
+            <input type="number" name="cnpjFornecedor" />
+            <h4>CNPJ</h4>
+            <input type="number" name="cnpjFornecedor" />
+                
