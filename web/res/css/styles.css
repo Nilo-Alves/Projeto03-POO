@@ -288,3 +288,26 @@ nav.navbar .navbar-brand{
 #footer h4:hover {
 	color: brown;
 }
+
+#btn-nav a {
+	margin: 10px 50px;
+	text-decoration: none;
+	color: black;
+	font-family: 'Julius Sans One', sans-serif;
+	font-weight: bold;
+	display: inline-block;
+	font-size: 150%;
+	
+}
+
+#btn-nav {
+	background: none;
+	border: 2px solid black;
+	line-height: 22px;
+}
+
+#btn-nav:hover {
+	background: rgba(255, 255, 255, 0.6);
+	cursor: pointer;
+}
+
