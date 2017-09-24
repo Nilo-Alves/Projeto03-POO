@@ -19,7 +19,7 @@
 
   <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
-	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="stylesheet" type="text/css" href="res/css/styles.css">
 
 </head>
 <body>
@@ -66,15 +66,15 @@
 
               <div class="row imagem-fb">
                 <div class="col-sm-4">
-                  <img class="img-desc" style="position: relative;" src="running2.png" height="170">
+                  <img class="img-desc" style="position: relative;" src="res/imgs/running2.png" height="170">
                   <h4>Velocidade</p>
                 </div>
                 <div class="col-sm-4">
-                  <img class="img-desc" src="locked.png" height="170">
+                  <img class="img-desc" src="res/imgs/locked.png" height="170">
                   <h4>Segurança</h4>
                 </div>
                 <div class="col-sm-4">
-                  <img class="img-desc" src="responsive.png" height="180">
+                  <img class="img-desc" src="res/imgs/responsive.png" height="180">
                   <h4 style="position: relative; bottom: 10px;">Praticidade</h4>
                 </div>
               </div>
@@ -130,7 +130,7 @@
   <div class="row">
     <div class="col-sm-3" id="primeiro-membro">
       <div class="divisoria hidden">
-        <img src="vinicius.png" height="350" width="300">
+        <img src="res/imgs/vinicius.png" height="350" width="300">
         <div class="txt-membro">
             <h4><span id="letra-membro">V</span>inícius <span id="letra-membro">L</span>ima</h4>
             <h4>Front-End Developer</h4>
@@ -147,7 +147,7 @@
 
     <div class="col-sm-3 membro-equipe" id="segundo-membro">
         <div class="divisoria hidden">
-        <img src="nilo.jpg" height="350" width="300">
+        <img src="res/imgs/nilo.jpg" height="350" width="300">
         <div class="txt-membro">
             <h4><span id="letra-membro">N</span>ilo <span id="letra-membro">F</span>rancisco</h4>
             <h4>Back-End Developer</h4>
@@ -164,7 +164,7 @@
 
     <div class="col-sm-3 membro-equipe" id="terceiro-membro">
        <div class="divisoria hidden">
-        <img src="vitor.jpg" height="350" width="300">
+        <img src="res/imgs/vitor.jpg" height="350" width="300">
         <div class="txt-membro">
             <h4><span id="letra-membro">V</span>itor <span id="letra-membro">Y</span>ugulis</h4>
             <h4>Back-End Developer</h4>
@@ -180,7 +180,7 @@
 
     <div class="col-sm-3 membro-equipe" id="quarto-membro">
        <div class="divisoria hidden">
-        <img src="rafael.jpg" height="350" width="300">
+        <img src="res/imgs/rafael.jpg" height="350" width="300">
         <div class="txt-membro">
             <h4><span id="letra-membro">R</span> afael <span id="letra-membro">S</span>ousa</h4>
             <h4>Back-End Developer</h4>
@@ -212,142 +212,6 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
 
-<script type="text/javascript">
-
-var flag = false;
-
-//Animações ao scrollar
- $(window).on('scroll', function() {
-             var y_scroll_pos = window.pageYOffset;
-             var scroll_pos_test = 475;
-
-              if(y_scroll_pos > scroll_pos_test) {
-
-                $("#txt-create").removeClass('hidden');
-                $("#txt-update").removeClass('hidden');
-                $("#txt-read").removeClass('hidden');
-                $("#txt-delete").removeClass('hidden');
-
-                $("#txt-create").addClass('animated fadeInDown');
-                $("#txt-update").addClass('animated fadeInDown');
-                $("#txt-read").addClass('animated fadeInDown');
-                $("#txt-delete").addClass('animated fadeInDown');
-              }
-
-              var scroll_pos_test = 550;
-
-              if (y_scroll_pos > scroll_pos_test) {
-                $("#desc-create").removeClass('hidden');
-                $("#desc-read").removeClass('hidden');
-                $("#desc-update").removeClass('hidden');
-                $("#desc-delete").removeClass('hidden');
-
-                $("#desc-create").addClass('animated fadeInUp');
-                $("#desc-read").addClass('animated fadeInUp');
-                $("#desc-update").addClass('animated fadeInUp');
-                $("#desc-delete").addClass('animated fadeInUp');
-              }
-
-              var scroll_pos_test = 1000;
-
-               if (y_scroll_pos > scroll_pos_test) {
-                $("#grafico").removeClass('hidden');
-                $("#txt-grafico").removeClass('hidden');
-                $("#btn-grafico").removeClass('hidden');
-
-
-                if (flag == false) {
-                    new Chart(document.getElementById("grafico"), {
-
-                          type: 'doughnut',
-                          data: {
-                            labels: ["Clientes", "Funcionários"],
-                            datasets: [
-                              {
-                                label: "Nosso dados",
-                                backgroundColor: ["#c41f05", "#f96f39"],
-                                data: [2478,5267]
-                              }
-                            ]
-                          },
-                          options: {
-                            title: {
-                              display: false
-                              
-                            }
-                          }
-                      });
-
-                    flag = true;
-                }
-
-                $("#txt-grafico").addClass('animated fadeInRight');
-                $("#btn-grafico").addClass('animated fadeInRight');
-               }
-
-               var scroll_pos_test = 1700;
-
-               if (y_scroll_pos > scroll_pos_test) {
-                $(".divisoria").removeClass('hidden');
-                $(".divisoria").addClass('animated fadeIn');
-              }
-
-
-
-           });
-
-Chart.defaults.global.animation.duration = 3000;
-Chart.defaults.global.animation.easing = 'easeOutBounce';
-
-//Navbar mudar de cor ao scrollar
-$(document).ready(function(){       
-   var scroll_start = 0;
-   var startchange = $('.navbar');
-   var offset = startchange.offset();
-   $(document).scroll(function() { 
-      scroll_start = $(this).scrollTop();
-
-      if(scroll_start > offset.top) { //quando scrolla
-          $('.navbar').css('background', 'rgba(252, 140, 136, 0.8)');
-          $('.navbar').css('opacity', '50%');
-          $('nav.navbar .navbar-nav .nav-item a').css('color', 'black');
-
-          $('nav.navbar .navbar-nav .nav-item a').hover(function() {
-          	
-          	$(this).css('color', 'red');
-          }, function() {
-          	$(this).css('color', 'black');
-          });
-          
-       } else { //quando não scrolla
-          $('.navbar').css('background-color', 'transparent');
-
-          $('nav.navbar .navbar-nav .nav-item a').css('color', 'black');
-
-          $('nav.navbar .navbar-nav .nav-item a').hover(function() {
-          	
-          	$(this).css('color', 'brown');
-          }, function() {
-          	$(this).css('color', 'black');
-          });
-       }
-   });
-});
-
-  //Efeito de zoom nas imagens da descricao
-  $(".img-desc").hover (function() {
-    $(this).addClass('animated pulse');
-  }, function() {
-    $(this).removeClass('animated pulse');
-  });
-
-  $(".img-desc").hover (function() {
-    $(this).addClass('animated pulse');
-  }, function() {
-    $(this).removeClass('animated pulse');
-  });
-
-
-</script>
+<script src="res/js/scripts.js" type="text/javascript"></script>
 </body>
 </html>

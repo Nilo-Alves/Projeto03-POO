@@ -1,0 +1,290 @@
+@font-face {
+	font-family: 'Ostrich Sans Inline';
+	src: url('../fonts/ostrich-sans-inline-regular.eot');
+	src: local('☺'), url('../fonts/ostrich-sans-inline-regular.woff') format('woff'), url('../fonts/ostrich-sans-inline-regular.ttf') format('truetype'), url('../fonts/ostrich-sans-inline-regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+html {
+	margin: 0;
+	padding-top: 80px;
+	padding-bottom: 0;
+}
+
+
+body{
+	  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #ef473a, #cb2d3e);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right,#ff9966, #ff5e62); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	margin: 0;
+	padding: 0;
+	font-family: 'Julius Sans One', sans-serif;
+}
+
+
+h1 {
+	text-align: center;
+	color: white;
+}
+
+.navegacao {
+ 	margin-bottom: 15px;
+ 	vertical-align: middle;
+}
+
+.navbar {
+	transition-duration: 0.5s;
+	
+}
+
+nav.navbar .navbar-nav .nav-item a {
+	font-size: 150%;
+	
+	padding-top: 25px;	
+}
+
+nav.navbar .navbar-brand{
+	/*margin: 0;
+	padding: 0;*/
+	
+	font-family: 'Ostrich Sans Inline';
+	font-size: 300%;
+	padding-left: 20px;
+	
+}
+
+
+.jumbotron {
+	background-image: url("../imgs/banner.jpg");
+	background-size: cover;
+	background-position: right;
+    padding-top: 200px;
+    padding-bottom: 200px;
+}
+
+.jumbotron h1 {
+	max-width: 60%;
+	font-family: 'Ostrich Sans Inline';
+	font-size: 600%;
+	color: black;
+}
+
+
+
+#first-block h2, .imagem-fb{
+	text-align: center;
+}
+
+#first-block h2{
+	font-size: 300%;
+}
+
+.img-desc {
+	margin-bottom: 20px;
+}
+
+#second-block {
+	background-color: rgba(255, 255, 255, 0.3);	
+}
+
+
+.hidden {
+	visibility: hidden;
+}
+
+.hidden2 {
+	display: none;
+}
+
+.letra-crud {
+	font-size: 400%;
+}
+
+.palavra-crud {
+	font-size: 300%;
+}
+
+.explicacao {
+	border: 1px solid black;
+}
+
+.ligacao1 {
+	padding-top: 80px;
+	padding-bottom: 80px;
+}
+
+#third-block {
+	background-color: rgba(255, 255, 255, 0.6);
+	padding-top: 80px;
+	padding-bottom: 80px;
+	overflow: hidden;
+	text-align: center;
+}
+
+#txt-grafico {
+	padding-bottom: 80px;
+}
+
+#third-block a {
+	margin: 10px 70px;
+	text-decoration: none;
+	color: black;
+	font-family: 'Julius Sans One', sans-serif;
+	font-weight: bold;
+	display: inline-block;
+	font-size: 150%;
+	
+}
+
+#third-block button {
+	background: none;
+	border: 2px solid #f96f39;
+	line-height: 22px;
+}
+
+#third-block button:hover {
+	background: #f96f39;
+	cursor: pointer;
+}
+
+#fourth-block {
+	background-color: rgba(255, 255, 255, 0.8);
+	padding-top: 50px;
+	padding-bottom: 80px;
+	text-align: center;
+}
+
+#fourth-block h2 {
+	font-size: 300%;
+	padding-bottom: 55px;
+}
+
+.membro-equipe {
+	
+}
+
+.divisoria {
+	background-color: none;
+	border: 2px solid black;
+	width: 100%;
+	max-height: 85%;
+    transition: max-height 0.15s ease-out;
+    overflow: hidden;
+    box-shadow: 10px 10px 5px #888888;
+}
+
+.divisoria:hover {
+	max-height: 1000px;
+	background-color: rgba(255, 255, 255, 0.6);
+    transition: max-height 0.25s ease-in;
+    transition: background-color 0.15 linear;
+}
+
+.divisoria img {
+
+	
+	border: 1px solid black;
+	margin: auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+
+}
+
+
+#letra-membro {
+	font-size: 225%;
+}
+.social [class*="fa fa-"] {
+    background-color: #333;
+    border-radius: 30px;
+    color: #fff;
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+    margin: auto 3px;
+    width: 35px;
+    font-size: 25px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.5s ease 0s;
+    margin-bottom: 10px;
+}
+
+#primeiro-membro:hover .social .fa-facebook{
+	background-color: #3b5998;
+}
+
+#primeiro-membro:hover .social .fa-github{
+	background-color: #6e5494;
+}
+
+#primeiro-membro:hover .social .fa-linkedin{
+	background-color: #0077B5;
+}
+
+#segundo-membro:hover .social .fa-facebook{
+	background-color: #3b5998;
+}
+
+#segundo-membro:hover .social .fa-github{
+	background-color: #6e5494;
+}
+
+#segundo-membro:hover .social .fa-facebook{
+	background-color: #3b5998;
+}
+
+#segundo-membro:hover .social .fa-github{
+	background-color: #6e5494;
+}
+
+#segundo-membro:hover .social .fa-linkedin{
+	background-color: #0077B5;
+}
+
+#terceiro-membro:hover .social .fa-facebook{
+	background-color: #3b5998;
+}
+
+#terceiro-membro:hover .social .fa-github{
+	background-color: #6e5494;
+}
+
+#terceiro-membro:hover .social .fa-linkedin{
+	background-color: #0077B5;
+}
+
+#quarto-membro:hover .social .fa-facebook{
+	background-color: #3b5998;
+}
+
+#quarto-membro:hover .social .fa-github{
+	background-color: #6e5494;
+}
+
+#quarto-membro:hover .social .fa-linkedin{
+	background-color: #0077B5;
+}
+
+#footer {
+	background-color: none;
+	color: black;
+	float: left;
+	text-align: center;
+	width: 100%;
+	text-decoration: none;
+}
+
+#footer h4 {
+	display: inline-block;
+	margin: 0;
+	padding: 25px 10px 25px 0px;
+	vertical-align: middle;
+	font-size: 100%;
+	color: black;
+}
+
+#footer h4:hover {
+	color: brown;
+}
