@@ -1,35 +1,36 @@
 package Repositorio;
 
 import java.util.HashMap;
+import Cadastros.Cliente;
 
-
-public class BaseDados {
+public class BaseDadosCliente {
     
     //Olá! Para você que está lendo essa merda sem entender nada... aí estão as dicas para utilizar esse código:
     //Fiz o banco como sendo orientado a objetos, então pra cada operação de adição de cliente/fornecedor,
     // remoção ou atualização, utilize as funções a seguir, preenchendo os parametros corretamente.
     // Qualquer coisa é só perguntar no grupo.
 
-    private HashMap<String, String> db;
+    private HashMap<String, Object> db;
     
-    public BaseDados(){
+    public BaseDadosCliente(){
         db = new HashMap<>();
     }
     
-    public void Insert(String index, String item){
-        db.put(index, item);
+    public void Insert(String index, Cliente cliente){
+        
+        db.put(index, cliente);
     }
     
-    public void Delete(String index, String item){
-        db.remove(index, item);
+    public void Delete(String index, Cliente cliente){
+        db.remove(index, cliente);
     }
     
-    public void Update(String index, String item){
-        db.replace(index, item);
+    public void Update(String index, Cliente cliente){
+        db.replace(index, cliente);
     }
     
-    public void Select(String index){
-        db.get(index);
+    public Object Select(String index){
+        return db.get(index);
     }
     
 }

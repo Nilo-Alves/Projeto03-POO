@@ -1,24 +1,63 @@
 package Cadastros;
 
-import Repositorio.BaseDados;
+import Repositorio.BaseDadosFornecedor;
 import java.util.HashMap;
+import java.util.Objects;
 
 public class Fornecedor {
     
-    private String nome;
-    private int cnpj;
-    private int numero;
-    private int cep;
-    private String complemento;
-    private String bairro;
-    private int telefone;
-    private String cidade;
-    private String unidade_federativa;
-    private int inscricao_e;
-    private int inscricao_m;
-    private String contato;
-    private String email;
+    BaseDadosFornecedor db = new BaseDadosFornecedor();
+        private String nome;
+        private int cnpj;
+        private int numero;
+        private int cep;
+        private String complemento;
+        private String bairro;
+        private int telefone;
+        private String cidade;
+        private String unidade_federativa;
+        private int inscricao_e;
+        private int inscricao_m;
+        private String contato;
+        private String email;
+        
+    public Fornecedor(String nome, int cnpj, int numero, int cep, String complemento, String bairro, int telefone,
+            String cidade, String unidade_federativa, int inscricao_e,int inscricao_m, String contato, String email){
+            this.nome = nome;
+            this.cnpj = cnpj;
+            this.numero = numero;
+            this.cep = cep;
+            this.complemento = complemento;
+            this.bairro = bairro;
+            this.telefone = telefone;
+            this.cidade = cidade;
+            this.unidade_federativa = unidade_federativa;
+            this.inscricao_e = inscricao_e;
+            this.inscricao_m = inscricao_m;
+            this.contato = contato;
+            this.email = email;            
+    }
 
+    public void CadastraFornecedor(Fornecedor fornecedor){
+        db.Insert (Integer.toString(cnpj), fornecedor);
+    }
+    
+    public void AlteraFornecedor (Fornecedor fornecedor){
+        db.Update(Integer.toString(cnpj), fornecedor);
+    }
+    
+    public void RemoveFornecedor (Fornecedor fornecedor){
+        db.Delete(Integer.toString(cnpj), fornecedor);
+    }
+    
+    public Fornecedor ConsultaFornecedor (Fornecedor fornecedor){
+        return db.Select(Integer.toString(cnpj));
+    }
+    
+    public Fornecedor ListaFornecedor (Fornecedor fornecedor){
+        return db.SelectAll(Integer.toString(cnpj));
+    }
+    
     public String getNome() {
         return nome;
     }
@@ -125,3 +164,4 @@ public class Fornecedor {
     
     
 }
+
