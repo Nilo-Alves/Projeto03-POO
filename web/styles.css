@@ -175,7 +175,9 @@ nav.navbar .navbar-brand{
 
 .divisoria:hover {
 	max-height: 1000px;
+	background-color: rgba(255, 255, 255, 0.6);
     transition: max-height 0.25s ease-in;
+    transition: background-color 0.15 linear;
 }
 
 .divisoria img {
