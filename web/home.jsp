@@ -153,7 +153,7 @@
             <h4>Back-End Developer</h4>
             
             <div class="social">
-              <a class="fa fa-facebook " href="#" target="_blank" href="#"></a>
+              <a class="fa fa-facebook " href="https://www.facebook.com/rafaelsansousa" target="_blank" href="#"></a>
               <a class="fa fa-linkedin" href="#" target="_blank" href="#"></a>
               <a class="fa fa-github" href="https://github.com/rafaelsansousa12" target="_blank" href="#"></a>
             </div>
@@ -164,6 +164,36 @@
   </div>
 
 </div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 style="text-align: center;" class="modal-title" id="exampleModalLabel">FAÇA SEU LOGIN</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+		  <div class="form-group">
+		    <label for="usuario-login">Usuário</label>
+		    <input type="text" class="form-control" id="usuario-login" name="usuario-login">
+		  </div>
+		  <div class="form-group">
+		    <label for="senha-login">Senha</label>
+		    <input type="password" class="form-control" id="senha-login" name="senha-login">
+		  </div>
+		</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <%@include file="WEB-INF/jspf/footer.jspf" %>
 
