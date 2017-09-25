@@ -10,7 +10,6 @@
     <input type="submit" name="opcaoListar" value="Listar"/>
         <%
     try{
-        Cliente cli = new Cliente();
         if(request.getParameter("opcaoRegistrar") != null){
             %>
             
@@ -27,7 +26,7 @@
             <input type="text" name="telefoneCliente"/>
             <h4>Email</h4>
             <input type="text" name="emailCliente"/>
-            <input type="submit" name="Registrar" value="Concluir Operação"/>
+            <p><input type="submit" name="Registrar" value="Concluir Operação"/><p>
         <%
             if(request.getParameter("Registrar") != null){
                 Cliente cliente = new Cliente(request.getParameter("nomeCliente"), 
@@ -56,7 +55,7 @@
             <input type="text" name="telefoneCliente"/>
             <h4>Email</h4>
             <input type="text" name="emailCliente"/>
-            <input type="submit" name="opcaoRegistrar" value="Registrar"/>
+            <p><input type="submit" name="Alterar" value="Concluir Operação"/><p>
 
         <%}
         else if(request.getParameter("opcaoPesquisar") != null){
@@ -64,12 +63,10 @@
             <h2>Pesquisar</h2>
             <h4>CPF</h4>
             <input type="text" name="cpfCliente"/>
-            <input type="submit" name="opcaoRegistrar" value="Registrar"/>
+            <p><input type="submit" name="Pesquisar" value="Concluir Operação"/><p>
             
         <%
-            if(request.getParameter("Registrar") != null){
-                Cliente cliente = cli.ConsultaCliente(request.getParameter("cpfCliente"));
-                
+            if(request.getParameter("Pesquisar") != null){
                 
             }
         }
@@ -78,12 +75,13 @@
             <h2>Deletar</h2>
             <h4>CPF</h4>
             <input type="text" name="cpfCliente"/>
-            <input type="submit" name="opcaoRegistrar" value="Registrar"/>
+            <p><input type="submit" name="Deletar" value="Concluir Operação"/><p>
         <%}
         else if(request.getParameter("opcaoListar") != null){
             %>
             <h2>Listar</h2>
-        <%}
+        <%
+        }
     }
     catch(Exception ex){%>
         
