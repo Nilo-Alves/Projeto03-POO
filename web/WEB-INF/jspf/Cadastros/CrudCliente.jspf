@@ -36,6 +36,10 @@
                         request.getParameter("rgCliente"),
                         request.getParameter("emailCliente"));
                 cliente.RegistraCliente(cliente);
+                
+                %>if (cliente.RegistraCliente(cliente) == true){%>
+                    alert("Cadastro realizado com sucesso!");
+                <%}%>
             }
         }
         

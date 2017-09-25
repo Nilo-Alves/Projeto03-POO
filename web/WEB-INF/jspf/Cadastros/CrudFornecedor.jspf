@@ -1,5 +1,6 @@
 <%-- any content can be specified here e.g.: --%>
 <%@ page pageEncoding="UTF-8" %>
+<<<<<<< HEAD
 <%@page import ="Cadastros.Fornecedor" %>
 
 <form>
@@ -41,11 +42,12 @@
             <input type="text" name="contatoFornecedor"/>
             <h4>E-mail</h4>
             <input type="text" name="emailFornecedor"/>
-            <input type="submit" name="Registrar" value="Concluir Operação"/>
+            <input type="submit" name="Cadastrar" value="Concluir Operação"/>
         <%
             if(request.getParameter("Cadastrar") != null){
                 Fornecedor fornecedor = new Fornecedor (request.getParameter("nomeFornecedor"), 
                         Integer.parseInt(request.getParameter("cnpjFornecedor")), 
+                        request.getParameter("enderecoFornecedor"),
                         Integer.parseInt(request.getParameter("numeroFornecedor")),
                         Integer.parseInt(request.getParameter("cepFornecedor")), 
                         request.getParameter("complementoFornecedor"),

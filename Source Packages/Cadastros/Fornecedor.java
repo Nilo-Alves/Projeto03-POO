@@ -7,6 +7,7 @@ public class Fornecedor {
     BaseDadosFornecedor db = new BaseDadosFornecedor();
         private String nome;
         private int cnpj;
+        private String endereco;
         private int numero;
         private int cep;
         private String complemento;
@@ -19,10 +20,11 @@ public class Fornecedor {
         private String contato;
         private String email;
         
-    public Fornecedor(String nome, int cnpj, int numero, int cep, String complemento, String bairro, int telefone,
+    public Fornecedor(String nome, int cnpj, String endereco, int numero, int cep, String complemento, String bairro, int telefone,
             String cidade, String unidade_federativa, int inscricao_e,int inscricao_m, String contato, String email){
             this.nome = nome;
             this.cnpj = cnpj;
+            this.endereco = endereco;
             this.numero = numero;
             this.cep = cep;
             this.complemento = complemento;
@@ -72,6 +74,14 @@ public class Fornecedor {
         this.cnpj = cnpj;
     }
 
+    public String getEndereco(){
+        return endereco;
+    }
+    
+    public void setEndereco(String endereco){
+        this.endereco = endereco;
+    }
+    
     public int getNumero() {
         return numero;
     }
