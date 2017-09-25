@@ -1,4 +1,4 @@
-package Cadastros;
+ package Cadastros;
 
 import Repositorio.BaseDadosCliente;
 

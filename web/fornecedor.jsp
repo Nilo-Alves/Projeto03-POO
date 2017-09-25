@@ -18,18 +18,23 @@
         <%@include file="WEB-INF/jspf/header.jspf" %>
         
 	<div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-3">SMART DATA</h1>
-    
-  </div>
-</div>
+            <div class="container">
+              <h1 class="display-3">Cadastro Fornecedor</h1>
 
-
+            </div>
+        </div>
+        
+        <!-- CONTEUDO AQUI-->
+        
 
 
 <div class="container-fluid" id="fourth-block">
 
- 
+<div>
+    <h2>Selecione a operação</h2>
+    <%@include file="WEB-INF/jspf/Cadastros/CrudCliente.jspf" %>
+    
+</div>
 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
