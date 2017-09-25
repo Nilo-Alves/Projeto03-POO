@@ -274,8 +274,30 @@ nav.navbar .navbar-brand{
 	text-align: center;
 	width: 100%;
 	text-decoration: none;
+
+  
+  
 }
 
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin: 0 0 0 0; /* bottom = footer height */
+    padding: 0 0 0 0;
+}
+
+#footer {
+    background-color: #e59595;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 70px;
+    width: 100%;
+    overflow:hidden;
+}
 #footer h4 {
 	display: inline-block;
 	margin: 0;

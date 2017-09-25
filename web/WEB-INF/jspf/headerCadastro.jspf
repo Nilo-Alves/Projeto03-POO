@@ -1,0 +1,27 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<div class="container-fluid navegacao">
+<nav class="navbar fixed-top navbar-toggleable-md navbar-light">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="home.jsp">SMART DATA</a>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="home.jsp"><b>Home</b></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="cliente.jsp"><b>GERENCIAR CLIENTES</b></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="fornecedor.jsp"><b>GERENCIAR FORNECEDORES</b></a>
+      </li>
+    </ul>
+
+    
+    
+  </div>
+</nav>
+</div>
+

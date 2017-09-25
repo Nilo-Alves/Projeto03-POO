@@ -15,7 +15,7 @@
     </head>
 
     <body>
-        <%@include file="WEB-INF/jspf/header.jspf" %>
+        <%@include file="WEB-INF/jspf/headerCadastro.jspf" %>
         
 	<div class="jumbotron jumbotron-fluid">
             <div class="container">
@@ -34,35 +34,6 @@
     <h2>Selecione a operação</h2>
     <%@include file="WEB-INF/jspf/Cadastros/CrudCliente.jspf" %>
     
-</div>
-
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 style="text-align: center;" class="modal-title" id="exampleModalLabel">FAÇA SEU LOGIN</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form>
-		  <div class="form-group">
-		    <label for="usuario-login">Usuário</label>
-		    <input type="text" class="form-control" id="usuario-login" name="usuario-login">
-		  </div>
-		  <div class="form-group">
-		    <label for="senha-login">Senha</label>
-		    <input type="password" class="form-control" id="senha-login" name="senha-login">
-		  </div>
-		</form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
 </div>
 
 
