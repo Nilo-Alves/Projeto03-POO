@@ -1,0 +1,125 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<%@page import ="Cadastros.Fornecedor" %>
+
+<form>
+    <input type="submit" name="opcaoCadastrar" value="Cadastrar"/>
+    <input type="submit" name="opcaoAlterar" value="Alterar"/>
+    <input type="submit" name="opcaoConsultar" value="Consultar"/>
+    <input type="submit" name="opcaoRemover" value="Remover"/>
+    <input type="submit" name="opcaoListar" value="Listar"/>
+        <%
+    try{
+        
+        if(request.getParameter("opcaoCadastrar") != null){
+            %>
+            
+            <h2>Cadastrar</h2>
+            <h4>Nome</h4>
+            <input type="text" name="nomeFornecedor"/>
+            <h4>CNPJ</h4>
+            <input type="tex" name="cnpjFornecedor"/>
+            <h4>Numero</h4>
+            <input type="text" name="numeroFornecedor"/>
+            <h4>Cep</h4>
+            <input type="text" name="cepFornecedor"/>
+            <h4>Complemento</h4>
+            <input type="text" name="complementoFornecedor"/>
+            <h4>Bairro</h4>
+            <input type="text" name="bairroFornecedor"/>
+            <h4>Telefone</h4>
+            <input type="text" name="telefoneFornecedor"/>
+            <h4>Cidade</h4>
+            <input type="text" name="cidadeFornecedor"/>
+            <h4>Unidade Federativa</h4>
+            <input type="text" name="unidadefederativaFornecedor"/>
+            <h4>Inscrição Estadual</h4>
+            <input type="text" name="inscricao_eFornecedor"/>
+            <h4>Inscrição Municipal</h4>
+            <input type="text" name="inscricao_mFornecedor"/>
+            <h4>Contato</h4>
+            <input type="text" name="contatoFornecedor"/>
+            <h4>E-mail</h4>
+            <input type="text" name="emailFornecedor"/>
+            <input type="submit" name="Registrar" value="Concluir Operação"/>
+        <%
+            if(request.getParameter("Cadastrar") != null){
+                Fornecedor fornecedor = new Fornecedor (request.getParameter("nomeFornecedor"), 
+                        Integer.parseInt(request.getParameter("cnpjFornecedor")), 
+                        Integer.parseInt(request.getParameter("numeroFornecedor")),
+                        Integer.parseInt(request.getParameter("cepFornecedor")), 
+                        request.getParameter("complementoFornecedor"),
+                        request.getParameter("bairroFornecedor"),
+                        Integer.parseInt(request.getParameter("telefoneFornecedor")),
+                        request.getParameter("cidadeFornecedor"),
+                        request.getParameter("unidadefederativaFornecedor"),
+                        Integer.parseInt(request.getParameter("inscricao_eFornecedor")),
+                        Integer.parseInt(request.getParameter("inscricao_mFornecedor")),
+                        request.getParameter("contatoFornecedor"),
+                        request.getParameter("emailFornecedor"));
+                fornecedor.CadastraFornecedor(fornecedor);
+            }
+        }
+        
+        else if(request.getParameter("opcaoAlterar") != null){
+            %>
+            <h2>Alterar</h2>
+            <h2>Registrar</h2>
+            <h4>Nome</h4>
+            <input type="text" name="nomeFornecedor"/>
+            <h4>CNPJ</h4>
+            <input type="text" name="cnpjFornecedor"/>
+            <h4>Numero</h4>
+            <input type="text" name="numeroFornecedor"/>
+            <h4>Cep</h4>
+            <input type="text" name="cepFornecedor"/>
+            <h4>Complemento</h4>
+            <input type="text" name="complementoFornecedor"/>
+            <h4>Bairro</h4>
+            <input type="text" name="bairroFornecedor"/>
+            <h4>Telefone</h4>
+            <input type="text" name="telefoneFornecedor"/>
+            <h4>Cidade</h4>
+            <input type="text" name="cidadeFornecedor"/>
+            <h4>Unidade Federativa</h4>
+            <input type="text" name="unidadefederativaFornecedor"/>
+            <h4>Inscrição Estadual</h4>
+            <input type="text" name="inscricao_eFornecedor"/>
+            <h4>Inscrição Municipal</h4>
+            <input type="text" name="inscricao_mFornecedor"/>
+            <h4>Contato</h4>
+            <input type="text" name="contatoFornecedor"/>
+            <h4>E-mail</h4>
+            <input type="text" name="emailFornecedor"/>
+            <input type="submit" name="opcaoCadastar" value="Cadastar"/>
+
+        <%}
+       else if(request.getParameter("opcaoConsultar") != null){
+            %>
+            <h2>Consultar</h2>
+            <h4>CNPJ</h4>
+            <input type="text" name="cnpjFornecedor"/>
+            <p><input type="submit" name="Consultar" value="Concluir Operação"/><p>
+            
+        <%
+            if(request.getParameter("Consultar") != null){
+                
+            }
+        }
+        else if(request.getParameter("opcaoRemover") != null){
+            %>
+            <h2>Remover</h2>
+            <h4>CNPJ</h4>
+            <input type="text" name="cnpjFornecedor"/>
+            <input type="submit" name="opcaoCadastrar" value="Cadastrar"/>
+        <%}
+        else if(request.getParameter("opcaoListar") != null){
+            %>
+            <h2>Listar</h2>
+        <%}
+    }
+    catch(Exception ex){%>
+        
+    <%}%>
+
+</form>
