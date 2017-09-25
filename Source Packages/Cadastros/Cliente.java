@@ -26,17 +26,17 @@ public class Cliente {
   
     public void RegistraCliente(Cliente cliente){
         
-        db.Insert(cliente.getCpf(), cliente);
+        db.Insert(cpf, cliente);
     }
     
     public void AlteraCliente(Cliente cliente){
-        db.Update(cliente.getCpf(), cliente);
+        db.Update(cpf, cliente);
     }
     
     
     public void RemoveCliente(Cliente cliente){
         
-        db.Delete(cliente.getCpf(), cliente);
+        db.Delete(cpf, cliente);
     }
     
     

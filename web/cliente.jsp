@@ -33,7 +33,6 @@
 <div>
     <h2>Selecione a operação</h2>
     <%@include file="WEB-INF/jspf/Cadastros/CrudCliente.jspf" %>
-    
 </div>
 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
