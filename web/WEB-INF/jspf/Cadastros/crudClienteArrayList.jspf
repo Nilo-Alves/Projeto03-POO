@@ -6,6 +6,7 @@
     
     <%try {
         if(request.getParameter("addCliente") != null) {
+//             int index = Integer.parseInt(request.getParameter("i"));
              String nomeCliente = request.getParameter("nomeCliente");
              String cpfCliente = request.getParameter("cpfCliente");
              String rgCliente = request.getParameter("rgCliente");
@@ -21,14 +22,34 @@
              cliente.setTelefone(telefoneCliente);
              cliente.setRua(ruaCliente);
              BaseDadosClienteArrayList.getClientes().add(cliente);
+//             BaseDadosClienteArrayList.getClientes().set(index, cliente);
              
          } else if (request.getParameter("removerCliente") != null){
              int i = Integer.parseInt(request.getParameter("i"));
              BaseDadosClienteArrayList.getClientes().remove(i);
          }
+            
+        else if (request.getParameter("salvarCliente") != null) {
+             
+             int index = Integer.parseInt(request.getParameter("i"));
+              String nomeCliente = request.getParameter("nomeCliente");
+              String emailCliente = request.getParameter("emailCliente");
+              String telefoneCliente = request.getParameter("telefoneCliente");
+            
+                 
+             ClienteArrayList cliente = new ClienteArrayList();
+                
+             cliente.setNome(nomeCliente);
+             cliente.setEmail(emailCliente);
+             cliente.setTelefone(telefoneCliente);
+             BaseDadosClienteArrayList.getClientes().set(index, cliente);
+             
+             
+         }
     } catch(Exception ex) {%>
         <h2>Erro ao processar o comando: <%=ex.getMessage()%></h2>
     <%}%>
+    
     
     <form>
         <label>Nome</label>
@@ -50,8 +71,9 @@
         <input type="text" name="ruaCliente"/><br/>  
         
         <input type="submit" name="addCliente" value="Adicionar Cliente"/>
-        
+    </form> 
         <h2>Lista</h2>
+        
         <table border="1">
             <tr>
                 <th>Índice</th>
@@ -61,6 +83,7 @@
                 <th>Exclusão</th>
             </tr>
             
+            <% if(request.getParameter("alterarCliente") == null) {%>
             <%for (int i=0; i<BaseDadosClienteArrayList.getClientes().size(); i++){%>
                 <%ClienteArrayList cliente= BaseDadosClienteArrayList.getClientes().get(i);%>
                 <tr>
@@ -73,11 +96,50 @@
                     <form>
                         <input type="hidden" name="i" value="<%=i%>"/>
                         <input type="submit" name="removerCliente" value="Excluir"/>
+                        <input type="submit" name="alterarCliente" value="Alterar"/>
                     </form>
                 </td>
                 </tr>
-        <%}%>
+                
+        <%}}
+             else {
+              for (int i=0; i<BaseDadosClienteArrayList.getClientes().size(); i++){
+                ClienteArrayList cliente = BaseDadosClienteArrayList.getClientes().get(i);
+                if(i != Integer.parseInt(request.getParameter("i"))){%>
+                    <tr>
+                        <td><%=i%></td>
+                        <td><%=cliente.getNome()%></td>
+                        <td><%=cliente.getEmail()%></td>
+                        <td><%=cliente.getTelefone()%></td>
+                    <td>
+                        <form>
+                            <input type="hidden" name="i" value="<%=i%>"/>
+                            <input type="submit" name="remove" value="Excluir"/>
+                            <input type="submit" name="altera" value="Alterar"/>
+                        </form>
+                    </td>
+                    </tr>
+                    <%}else {%>
+                    <tr>
+                        <form>
+                        <td><%=i%></td>
+                        <td><input type="text" name="nomeCliente" value="<%=cliente.getNome()%>"></cd>
+                        <td><input type="text" name="emailCliente" value="<%=cliente.getEmail()%>"></td>
+                        <td><input type="number" name="telefoneCliente" value="<%=cliente.getTelefone()%>"></td>
+                        
+                        <input type="hidden" name="i" value="<%=i%>"/>
+                        <td><input type="submit" value="Salvar Alterações" name="salvarCliente"</td>
+                        </form>
+                    </tr>
+                            
+        <%}}}%>
                     
-        </table>
-    </form>
+            </table>
+
+             
+        
+        
+                    
+        
+    
 </div>
