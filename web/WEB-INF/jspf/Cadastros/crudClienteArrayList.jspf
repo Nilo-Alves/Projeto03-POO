@@ -3,6 +3,33 @@
 <%@ page pageEncoding="UTF-8" %>
 <div class="container">
     <h2>Cadastro de Cliente com ArrayList</h2>
+    
+    <%try {
+        if(request.getParameter("addCliente") != null) {
+             String nomeCliente = request.getParameter("nomeCliente");
+             String cpfCliente = request.getParameter("cpfCliente");
+             String rgCliente = request.getParameter("rgCliente");
+             String emailCliente = request.getParameter("emailCliente");
+             String telefoneCliente = request.getParameter("telefoneCliente");
+             String ruaCliente = request.getParameter("ruaCliente");
+             
+             ClienteArrayList cliente = new ClienteArrayList();
+             cliente.setNome(nomeCliente);
+             cliente.setCpf(cpfCliente);
+             cliente.setRg(rgCliente);
+             cliente.setEmail(emailCliente);
+             cliente.setTelefone(telefoneCliente);
+             cliente.setRua(ruaCliente);
+             BaseDadosClienteArrayList.getClientes().add(cliente);
+             
+         } else if (request.getParameter("removerCliente") != null){
+             int i = Integer.parseInt(request.getParameter("i"));
+             BaseDadosClienteArrayList.getClientes().remove(i);
+         }
+    } catch(Exception ex) {%>
+        <h2>Erro ao processar o comando: <%=ex.getMessage()%></h2>
+    <%}%>
+    
     <form>
         <label>Nome</label>
         <input type="text" name="nomeCliente"/><br/>
@@ -23,5 +50,34 @@
         <input type="text" name="ruaCliente"/><br/>  
         
         <input type="submit" name="addCliente" value="Adicionar Cliente"/>
+        
+        <h2>Lista</h2>
+        <table border="1">
+            <tr>
+                <th>Índice</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Telefone</th>
+                <th>Exclusão</th>
+            </tr>
+            
+            <%for (int i=0; i<BaseDadosClienteArrayList.getClientes().size(); i++){%>
+                <%ClienteArrayList cliente= BaseDadosClienteArrayList.getClientes().get(i);%>
+                <tr>
+                    <td><%=i%></td>
+                    <td><%=cliente.getNome()%></td>
+                    <td><%=cliente.getEmail()%></td>
+                    <td><%=cliente.getTelefone()%></td>
+                
+                <td>
+                    <form>
+                        <input type="hidden" name="i" value="<%=i%>"/>
+                        <input type="submit" name="removerCliente" value="Excluir"/>
+                    </form>
+                </td>
+                </tr>
+        <%}%>
+                    
+        </table>
     </form>
 </div>
