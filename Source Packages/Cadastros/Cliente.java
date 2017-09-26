@@ -4,7 +4,7 @@ import Repositorio.BaseDadosCliente;
 
 public class Cliente {
     
-    BaseDadosCliente db = new BaseDadosCliente();
+    public BaseDadosCliente db = new BaseDadosCliente();
     private String nome;
     private String cpf;
     private String endereco;
@@ -13,7 +13,6 @@ public class Cliente {
     private String email;
 
     public Cliente(){
-        Cliente cli = new Cliente();
     }
     public Cliente(String nome, String cpf, String endereco, String telefone, String rg, String email) {
         this.nome = nome;
@@ -23,18 +22,18 @@ public class Cliente {
         this.rg = rg;
         this.email = email;
     }
-  
-    public void RegistraCliente(Cliente cliente){
+    
+    public void RegistraCliente(String cpf, Cliente cliente){
         
         db.Insert(cpf, cliente);
     }
     
-    public void AlteraCliente(Cliente cliente){
+    public void AlteraCliente(String cpf, Cliente cliente){
         db.Update(cpf, cliente);
     }
     
     
-    public void RemoveCliente(Cliente cliente){
+    public void RemoveCliente(String cpf, Cliente cliente){
         
         db.Delete(cpf, cliente);
     }

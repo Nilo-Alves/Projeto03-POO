@@ -1,13 +1,50 @@
 <%-- any content can be specified here e.g.: --%>
+<%@page import="java.util.Set"%>
+<%@page import="java.util.Map.Entry"%>
+<%@page import="Repositorio.BaseDadosCliente"%>
 <%@ page pageEncoding="UTF-8" %>
 <%@page import ="Cadastros.Cliente" %>
 
+<%
+    BaseDadosCliente db = new BaseDadosCliente();
+    
+    Cliente cli = new Cliente();
+    
+    Cliente cli1 = new Cliente("123","123","123","123","123","123");
+        Cliente cli3 = new Cliente("1234","123","123","123","123","123");
+        Cliente cli2 = new Cliente("1234","123","123","123","123","123");
+        
+    cli.RegistraCliente("123", cli1);
+    cli.RegistraCliente("1234", cli2);
+    cli.RegistraCliente("12345", cli3);
+    
+    Set<Entry<String,Cliente>> hashSet=cli.db.getClientes();
+    for(Entry cliente:hashSet ) {
+        cli = (Cliente)cliente.getValue();
+        //System.out.println("Key="+entry.getKey()+", Value="+entry.getValue());
+        %>
+        
+        <table border ="2" align="center">
+        <tr>
+        <td>CPF:<%=cli.getCpf()%></td>
+        <td>Nome:<%=cli.getNome()%></td>
+        <td>Telefone:<%=cli.getTelefone()%></td>
+        </tr>
+</table>
+        <hr>
+        <%
+    }
+%>
+<p>Total registros: <%=cli.db.TotalClientes() //Não funciona??? 
+        %> / (Nao funciona? Vide código)</p><hr>
+<br><br><tr/>
 <form>
     <input type="submit" name="opcaoRegistrar" value="Registrar"/>
     <input type="submit" name="opcaoAlterar" value="Alterar"/>
     <input type="submit" name="opcaoPesquisar" value="Pesquisar"/>
     <input type="submit" name="opcaoDeletar" value="Deletar"/>
     <input type="submit" name="opcaoListar" value="Listar"/>
+    
         <%
     try{
         if(request.getParameter("opcaoRegistrar") != null){
@@ -35,18 +72,15 @@
                         request.getParameter("telefoneCliente"), 
                         request.getParameter("rgCliente"),
                         request.getParameter("emailCliente"));
-                cliente.RegistraCliente(cliente);
+                cliente.RegistraCliente(request.getParameter("cpfCliente"), cliente);
                 
-                %>if (cliente.RegistraCliente(cliente) == true){%>
-                    alert("Cadastro realizado com sucesso!");
-                <%}%>
+                
             }
         }
         
         else if(request.getParameter("opcaoAlterar") != null){
             %>
             <h2>Alterar</h2>
-            <h2>Registrar</h2>
             <h4>Nome</h4>
             <input type="text" name="nomeCliente"/>
             <h4>RG</h4>

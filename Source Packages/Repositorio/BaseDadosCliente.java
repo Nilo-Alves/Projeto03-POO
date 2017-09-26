@@ -2,6 +2,8 @@ package Repositorio;
 
 import java.util.HashMap;
 import Cadastros.Cliente;
+import java.util.Map.Entry;
+import java.util.Set;
 
 public class BaseDadosCliente {
     
@@ -10,10 +12,18 @@ public class BaseDadosCliente {
     // remoção ou atualização, utilize as funções a seguir, preenchendo os parametros corretamente.
     // Qualquer coisa é só perguntar no grupo.
 
-    private HashMap<String, Cliente> db;
+    public HashMap<String, Cliente> db;
     
     public BaseDadosCliente(){
         db = new HashMap<>();
+    }
+    
+    public int TotalClientes(){
+        return db.size();
+    }
+    
+    public Set<Entry<String, Cliente>> getClientes(){
+        return db.entrySet();
     }
     
     public void Insert(String index, Cliente cliente){
