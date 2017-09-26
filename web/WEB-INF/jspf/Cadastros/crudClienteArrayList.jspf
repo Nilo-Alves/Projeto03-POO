@@ -1,8 +1,9 @@
 <%@page import="Cadastros.ClienteArrayList"%>
 <%@page import="Repositorio.BaseDadosClienteArrayList"%>
 <%@ page pageEncoding="UTF-8" %>
+<div class="container-fluid" id="client-block">
 <div class="container">
-    <h2>Cadastro de Cliente com ArrayList</h2>
+    <h2 style="padding-top: 30px; padding-bottom: 20px;">Cadastro de Cliente com ArrayList</h2>
     
     <%try {
         if(request.getParameter("addCliente") != null) {
@@ -87,26 +88,42 @@
     
     
     <form>
-        <label>Nome</label>
-        <input class="campo" required type="text" name="nomeCliente"/><br/>
+    <div class="row">
+        <div class="form-group col-sm-3">
+            <label for="campo-nome">Nome</label>
+            <input id="campo-nome" class="form-control" required type="text" name="nomeCliente"/><br/>
+        </div>
+
+        <div class="form-group col-sm-3">
+            <label for="campo-cf">CPF</label>
+            <input required id="campo-cpf" class="cpf form-control" onkeypress='return event.charCode >= 48 && event.charCode <= 57' data-mask="000.000.000-00" type="text" name="cpfCliente"/><br/>
+        </div>
+
+        <div class="form-group col-sm-3">
+            <label for="campo-rg">RG</label>
+            <input required id="campo-rg" class="form-control" type="text" name="rgCliente"/><br/> 
+        </div>
         
-        <label>CPF</label>
-        <input required class="cpf" onkeypress='return event.charCode >= 48 && event.charCode <= 57' data-mask="000.000.000-00" type="text" name="cpfCliente"/><br/>
+        <div class="form-group col-sm-3">
+            <label for="campo-email">E-mail</label>
+            <input required id="campo-email" class="form-control" type="email" name="emailCliente"/><br/>  
+        </div>
+    </div>
+    <div class="row">
         
-        <label>RG</label>
-        <input required  type="text" name="rgCliente"/><br/> 
+        <div class="form-group col-sm-4">
+            <label for="campo-telefone">Telefone</label>
+            <input required id="campo-telefone" class="form-control" type="text" data-mask='(00) 0000-00000' name="telefoneCliente"/><br/>  
+        </div>
         
-        <label>E-mail</label>
-        <input required type="email" name="emailCliente"/><br/>  
+        <div class="form-group col-sm-4">
+            <label for="campo-cidade">Cidade</label>
+            <input required id="campo-cidade" class="form-control" type="text" name="cidadeCliente"/><br/>
+        </div>
         
-        <label>Telefone</label>
-        <input required type="text" data-mask='(00) 0000-00000' name="telefoneCliente"/><br/>  
-        
-        <label>Cidade</label>
-        <input required type="text" name="cidadeCliente"/><br/>
-        
-        <label>Estado</label>
-        <select required name="estadoCliente">
+        <div class="form-group col-sm-4">
+        <label for="campo-estado">Estado</label>
+        <select id="campo-estado" class="form-control" required name="estadoCliente">
             <option value="">-- Selecione --</option>
                 <option value="AC">Acre</option>
                 <option value="AL">Alagoas</option>
@@ -136,21 +153,32 @@
                 <option value="SE">Sergipe</option>
                 <option value="TO">Tocantins</option>
         </select><br/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-sm-3">
+            <label for="campo-rua">Rua</label>
+            <input id="campo-rua" class="form-control" required type="text" name="ruaCliente"/><br/>
+        </div>
         
-        <label>Rua</label>
-        <input required type="text" name="ruaCliente"/><br/>
+        <div class="form-group col-sm-3">
+            <label for="campo-numero">Numero</label>
+            <input id="campo-numero" class="form-control" required type="number" min="0" name="numeroCliente"/><br/>
+        </div>
         
-        <label>Numero</label>
-        <input required type="number" min="0" name="numeroCliente"/><br/>
-        
-        <label>Complemento</label>
-        <input type="text" name="complementoCliente"/><br/>
-        
-        <input type="submit" name="addCliente" value="Adicionar Cliente"/>
+        <div class="form-group col-sm-3">
+            <label for="campo-complemento" >Complemento</label>
+            <input id="campo-complemento" class="form-control" type="text" name="complementoCliente"/><br/>
+        </div>
+        <div class="col-sm-3">
+        <input id="btn-salvar" type="submit" name="addCliente" value="Adicionar Cliente"/>
+        </div>
     </form> 
 </div>
+
+</div>
 <div class="container-fluid" class="tabela" style="margin-bottom: 150px;">
-        <h2>Lista</h2>
+        <h2 style="text-align: center;">Lista de clientes registrados</h2>
         
         <table style="margin-bottom: 150px;" class="table table-bordered table-sm">
         <thead>
@@ -190,8 +218,8 @@
                 <td>
                     <form>
                         <input type="hidden" name="i" value="<%=i%>"/>
-                        <input type="submit" name="removerCliente" value="Excluir"/>
-                        <input type="submit" name="alterarCliente" value="Alterar"/>
+                        <input id="btn-excluir" type="submit" name="removerCliente" value="Excluir"/>
+                        <input id="btn-alterar" type="submit" name="alterarCliente" value="Alterar"/>
                     </form>
                 </td>
                 </tr>
@@ -216,8 +244,8 @@
                     <td>
                         <form>
                             <input type="hidden" name="i" value="<%=i%>"/>
-                            <input type="submit" name="removerCliente" value="Excluir"/>
-                            <input type="submit" name="alterarCliente" value="Alterar"/>
+                            <input id="btn-excluir" type="submit" name="removerCliente" value="Excluir"/>
+                            <input id="btn-alterar" type="submit" name="alterarCliente" value="Alterar"/>
                         </form>
                     </td>
                     </tr>
@@ -237,7 +265,7 @@
                             <td><input type="text" class="campo-tabela" name="complementoCliente" value="<%=cliente.getComplemento()%>"></td>
 
                             <input type="hidden" name="i" value="<%=i%>"/>
-                            <td><input type="submit" value="Salvar Alterações" name="salvarCliente"</td>
+                            <td><input id="btn-salvarcliente" type="submit" value="Salvar Alterações" name="salvarCliente"</td>
                         </form>
                     </tr>
                             
@@ -250,7 +278,7 @@
         
                     
         
-    
+    </div>
 </div>
         
         
