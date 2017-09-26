@@ -6,13 +6,17 @@
     
     <%try {
         if(request.getParameter("addCliente") != null) {
-//             int index = Integer.parseInt(request.getParameter("i"));
+
              String nomeCliente = request.getParameter("nomeCliente");
              String cpfCliente = request.getParameter("cpfCliente");
              String rgCliente = request.getParameter("rgCliente");
              String emailCliente = request.getParameter("emailCliente");
              String telefoneCliente = request.getParameter("telefoneCliente");
+             String cidadeCliente = request.getParameter("cidadeCliente");
+             String estadoCliente = request.getParameter("estadoCliente");
              String ruaCliente = request.getParameter("ruaCliente");
+             String numeroCliente = request.getParameter("numeroCliente");
+             String complementoCliente = request.getParameter("complementoCliente");
              
              ClienteArrayList cliente = new ClienteArrayList();
              cliente.setNome(nomeCliente);
@@ -20,9 +24,13 @@
              cliente.setRg(rgCliente);
              cliente.setEmail(emailCliente);
              cliente.setTelefone(telefoneCliente);
+             cliente.setCidade(cidadeCliente);
+             cliente.setEstado(estadoCliente);
              cliente.setRua(ruaCliente);
+             cliente.setNumero(numeroCliente);
+             cliente.setComplemento(complementoCliente);
              BaseDadosClienteArrayList.getClientes().add(cliente);
-//             BaseDadosClienteArrayList.getClientes().set(index, cliente);
+
              
          } else if (request.getParameter("removerCliente") != null){
              int i = Integer.parseInt(request.getParameter("i"));
@@ -31,17 +39,32 @@
             
         else if (request.getParameter("salvarCliente") != null) {
              
-             int index = Integer.parseInt(request.getParameter("i"));
+              int index = Integer.parseInt(request.getParameter("i"));
+             
               String nomeCliente = request.getParameter("nomeCliente");
+              String cpfCliente = request.getParameter("cpfCliente");
+              String rgCliente = request.getParameter("rgCliente");
               String emailCliente = request.getParameter("emailCliente");
               String telefoneCliente = request.getParameter("telefoneCliente");
+              String cidadeCliente = request.getParameter("cidadeCliente");
+              String estadoCliente = request.getParameter("estadoCliente");
+              String ruaCliente = request.getParameter("ruaCliente");
+              String numeroCliente = request.getParameter("nomeCliente");
+              String complementoCliente = request.getParameter("nomeCliente");
             
                  
              ClienteArrayList cliente = new ClienteArrayList();
                 
              cliente.setNome(nomeCliente);
+             cliente.setCpf(cpfCliente);
+             cliente.setRg(rgCliente);
              cliente.setEmail(emailCliente);
              cliente.setTelefone(telefoneCliente);
+             cliente.setCidade(cidadeCliente);
+             cliente.setEstado(estadoCliente);
+             cliente.setRua(ruaCliente);
+             cliente.setNumero(numeroCliente);
+             cliente.setComplemento(complementoCliente);
              BaseDadosClienteArrayList.getClientes().set(index, cliente);
              
              
@@ -53,22 +76,63 @@
     
     <form>
         <label>Nome</label>
-        <input type="text" name="nomeCliente"/><br/>
+        <input required type="text" name="nomeCliente"/><br/>
         
         <label>CPF</label>
-        <input type="text" name="cpfCliente"/><br/>
+        <input required class="cpf" onkeypress='return event.charCode >= 48 && event.charCode <= 57' data-mask="000.000.000-00" type="text" name="cpfCliente"/><br/>
         
         <label>RG</label>
-        <input type="text" name="rgCliente"/><br/> 
+        <input required  type="text" name="rgCliente"/><br/> 
         
         <label>E-mail</label>
-        <input type="text" name="emailCliente"/><br/>  
+        <input required type="email" name="emailCliente"/><br/>  
         
         <label>Telefone</label>
-        <input type="text" name="telefoneCliente"/><br/>  
+        <input required type="text" data-mask='(00) 0000-00000' name="telefoneCliente"/><br/>  
+        
+        <label>Cidade</label>
+        <input required type="text" name="cidadeCliente"/><br/>
+        
+        <label>Estado</label>
+        <select required name="estadoCliente">
+            <option value="">-- Selecione --</option>
+                <option value="AC">Acre</option>
+                <option value="AL">Alagoas</option>
+                <option value="AP">Amapá</option>
+                <option value="AM">Amazonas</option>
+                <option value="BA">Bahia</option>
+                <option value="CE">Ceará</option>
+                <option value="DF">Distrito Federal</option>
+                <option value="ES">Espírito Santo</option>
+                <option value="GO">Goiás</option>
+                <option value="MA">Maranhão</option>
+                <option value="MT">Mato Grosso</option>
+                <option value="MS">Mato Grosso do Sul</option>
+                <option value="MG">Minas Gerais</option>
+                <option value="PA">Pará</option>
+                <option value="PB">Paraíba</option>
+                <option value="PR">Paraná</option>
+                <option value="PE">Pernambuco</option>
+                <option value="PI">Piauí</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="RN">Rio Grande do Norte</option>
+                <option value="RS">Rio Grande do Sul</option>
+                <option value="RO">Rondônia</option>
+                <option value="RR">Rorâima</option>
+                <option value="SC">Santa Catarina</option>
+                <option value="SP">São Paulo</option>
+                <option value="SE">Sergipe</option>
+                <option value="TO">Tocantins</option>
+        </select><br/>
         
         <label>Rua</label>
-        <input type="text" name="ruaCliente"/><br/>  
+        <input required type="text" name="ruaCliente"/><br/>
+        
+        <label>Numero</label>
+        <input required type="number" min="0" name="numeroCliente"/><br/>
+        
+        <label>Complemento</label>
+        <input type="text" name="complementoCliente"/><br/>
         
         <input type="submit" name="addCliente" value="Adicionar Cliente"/>
     </form> 
@@ -78,9 +142,15 @@
             <tr>
                 <th>Índice</th>
                 <th>Nome</th>
+                <th>CPF</th>
+                <th>RG</th>
                 <th>Email</th>
                 <th>Telefone</th>
-                <th>Exclusão</th>
+                <th>Cidade</th>
+                <th>Estado</th>
+                <th>Rua</th>
+                <th>Nº</th>
+                <th>Complemento</th>
             </tr>
             
             <% if(request.getParameter("alterarCliente") == null) {%>
@@ -89,8 +159,16 @@
                 <tr>
                     <td><%=i%></td>
                     <td><%=cliente.getNome()%></td>
+                    <td><%=cliente.getCpf()%></td>
+                    <td><%=cliente.getRg()%></td>
                     <td><%=cliente.getEmail()%></td>
                     <td><%=cliente.getTelefone()%></td>
+                    <td><%=cliente.getCidade()%></td>
+                    <td><%=cliente.getEstado()%></td>
+                    <td><%=cliente.getRua()%></td>
+                    <td><%=cliente.getNumero()%></td>
+                    <td><%=cliente.getComplemento()%></td>
+                    
                 
                 <td>
                     <form>
@@ -109,8 +187,15 @@
                     <tr>
                         <td><%=i%></td>
                         <td><%=cliente.getNome()%></td>
+                        <td><%=cliente.getCpf()%></td>
+                        <td><%=cliente.getRg()%></td>
                         <td><%=cliente.getEmail()%></td>
                         <td><%=cliente.getTelefone()%></td>
+                        <td><%=cliente.getCidade()%></td>
+                        <td><%=cliente.getEstado()%></td>
+                        <td><%=cliente.getRua()%></td>
+                        <td><%=cliente.getNumero()%></td>
+                        <td><%=cliente.getComplemento()%></td>
                     <td>
                         <form>
                             <input type="hidden" name="i" value="<%=i%>"/>
@@ -122,13 +207,20 @@
                     <%}else {%>
                     <tr>
                         <form>
-                        <td><%=i%></td>
-                        <td><input type="text" name="nomeCliente" value="<%=cliente.getNome()%>"></cd>
-                        <td><input type="text" name="emailCliente" value="<%=cliente.getEmail()%>"></td>
-                        <td><input type="number" name="telefoneCliente" value="<%=cliente.getTelefone()%>"></td>
-                        
-                        <input type="hidden" name="i" value="<%=i%>"/>
-                        <td><input type="submit" value="Salvar Alterações" name="salvarCliente"</td>
+                            <td><%=i%></td>
+                            <td><input type="text" name="nomeCliente" value="<%=cliente.getNome()%>"></td>
+                            <td><input type="text" name="cpfCliente" value="<%=cliente.getCpf()%>"></td>
+                            <td><input type="text" name="rgCliente" value="<%=cliente.getRg()%>"></td>
+                            <td><input type="text" name="emailCliente" value="<%=cliente.getEmail()%>"></td>
+                            <td><input type="text" name="telefoneCliente" value="<%=cliente.getTelefone()%>"></td>
+                            <td><input type="text" name="cidadeCliente" value="<%=cliente.getCidade()%>"></td>
+                            <td><input type="text" name="estadoCliente" value="<%=cliente.getEstado()%>"></td>
+                            <td><input type="text" name="ruaCliente" value="<%=cliente.getRua()%>"></td>
+                            <td><input type="text" name="numeroCliente" value="<%=cliente.getNumero()%>"></td>
+                            <td><input type="text" name="numeroComplemento" value="<%=cliente.getComplemento()%>"></td>
+
+                            <input type="hidden" name="i" value="<%=i%>"/>
+                            <td><input type="submit" value="Salvar Alterações" name="salvarCliente"</td>
                         </form>
                     </tr>
                             
@@ -143,3 +235,5 @@
         
     
 </div>
+        
+        
