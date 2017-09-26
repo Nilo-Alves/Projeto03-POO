@@ -199,8 +199,8 @@
                     <td>
                         <form>
                             <input type="hidden" name="i" value="<%=i%>"/>
-                            <input type="submit" name="remove" value="Excluir"/>
-                            <input type="submit" name="altera" value="Alterar"/>
+                            <input type="submit" name="removerCliente" value="Excluir"/>
+                            <input type="submit" name="alterarCliente" value="Alterar"/>
                         </form>
                     </td>
                     </tr>

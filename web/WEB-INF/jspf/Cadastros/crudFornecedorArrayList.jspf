@@ -1,0 +1,229 @@
+<%@page import="Cadastros.FornecedorArrayList"%>
+<%@page import="Repositorio.BaseDadosFornecedorArrayList"%>
+<%@ page pageEncoding="UTF-8" %>
+<div class="container">
+    <h2>Cadastro de Fornecedores com ArrayList</h2>
+    
+    <%try {
+        if(request.getParameter("addFornecedor") != null) {
+
+             String nomeFornecedor = request.getParameter("nomeFornecedor");
+             String cnpjFornecedor = request.getParameter("cnpjFornecedor");
+             String razaoFornecedor = request.getParameter("razaoFornecedor");
+             String emailFornecedor = request.getParameter("emailFornecedor");
+             String telefoneFornecedor = request.getParameter("telefoneFornecedor");
+             String cidadeFornecedor = request.getParameter("cidadeFornecedor");
+             String estadoFornecedor = request.getParameter("estadoFornecedor");
+             String ruaFornecedor = request.getParameter("ruaFornecedor");
+             String numeroFornecedor = request.getParameter("numeroFornecedor");
+             String complementoFornecedor = request.getParameter("complementoFornecedor");
+             
+             FornecedorArrayList fornecedor = new FornecedorArrayList();
+             fornecedor.setNome(nomeFornecedor);
+             fornecedor.setCnpj(cnpjFornecedor);
+             fornecedor.setRazao(razaoFornecedor);
+             fornecedor.setEmail(emailFornecedor);
+             fornecedor.setTelefone(telefoneFornecedor);
+             fornecedor.setCidade(cidadeFornecedor);
+             fornecedor.setEstado(estadoFornecedor);
+             fornecedor.setRua(ruaFornecedor);
+             fornecedor.setNumero(numeroFornecedor);
+             fornecedor.setComplemento(complementoFornecedor);
+             BaseDadosFornecedorArrayList.getFornecedores().add(fornecedor);
+
+             
+         } else if (request.getParameter("removerFornecedor") != null){
+             int i = Integer.parseInt(request.getParameter("i"));
+             BaseDadosFornecedorArrayList.getFornecedores().remove(i);
+         }
+            
+        else if (request.getParameter("salvarFornecedor") != null) {
+             
+              int index = Integer.parseInt(request.getParameter("i"));
+             
+              String nomeFornecedor = request.getParameter("nomeFornecedor");
+              String cnpjFornecedor = request.getParameter("cnpjFornecedor");
+              String razaoFornecedor = request.getParameter("razaoFornecedor");
+              String emailFornecedor = request.getParameter("emailFornecedor");
+              String telefoneFornecedor = request.getParameter("telefoneFornecedor");
+              String cidadeFornecedor = request.getParameter("cidadeFornecedor");
+              String estadoFornecedor = request.getParameter("estadoFornecedor");
+              String ruaFornecedor = request.getParameter("ruaFornecedor");
+              String numeroFornecedor = request.getParameter("nomeFornecedor");
+              String complementoFornecedor = request.getParameter("nomeFornecedor");
+            
+                 
+             FornecedorArrayList fornecedor = new FornecedorArrayList();
+                
+             fornecedor.setNome(nomeFornecedor);
+             fornecedor.setCnpj(cnpjFornecedor);
+             fornecedor.setRazao(razaoFornecedor);
+             fornecedor.setEmail(emailFornecedor);
+             fornecedor.setTelefone(telefoneFornecedor);
+             fornecedor.setCidade(cidadeFornecedor);
+             fornecedor.setEstado(estadoFornecedor);
+             fornecedor.setRua(ruaFornecedor);
+             fornecedor.setNumero(numeroFornecedor);
+             fornecedor.setComplemento(complementoFornecedor);
+             BaseDadosFornecedorArrayList.getFornecedores().set(index, fornecedor);
+             
+             
+         }
+    } catch(Exception ex) {%>
+        <h2>Erro ao processar o comando: <%=ex.getMessage()%></h2>
+    <%}%>
+    
+    <form>
+        <label>Nome</label>
+        <input required type="text" name="nomeFornecedor"/><br/>
+        
+        <label>CNPJ</label>
+        <input required class="cpf" onkeypress='return event.charCode >= 48 && event.charCode <= 57' data-mask="00.000.000/0000-00" type="text" name="cnpjFornecedor"/><br/>
+        
+        <label>Razão Social</label>
+        <input required  type="text" name="razaoFornecedor"/><br/> 
+        
+        <label>E-mail</label>
+        <input required type="email" name="emailFornecedor"/><br/>  
+        
+        <label>Telefone</label>
+        <input required type="text" data-mask='(00) 0000-00000' name="telefoneFornecedor"/><br/>  
+        
+        <label>Cidade</label>
+        <input required type="text" name="cidadeFornecedor"/><br/>
+        
+        <label>Estado</label>
+        <select required name="estadoFornecedor">
+            <option value="">-- Selecione --</option>
+                <option value="AC">Acre</option>
+                <option value="AL">Alagoas</option>
+                <option value="AP">Amapá</option>
+                <option value="AM">Amazonas</option>
+                <option value="BA">Bahia</option>
+                <option value="CE">Ceará</option>
+                <option value="DF">Distrito Federal</option>
+                <option value="ES">Espírito Santo</option>
+                <option value="GO">Goiás</option>
+                <option value="MA">Maranhão</option>
+                <option value="MT">Mato Grosso</option>
+                <option value="MS">Mato Grosso do Sul</option>
+                <option value="MG">Minas Gerais</option>
+                <option value="PA">Pará</option>
+                <option value="PB">Paraíba</option>
+                <option value="PR">Paraná</option>
+                <option value="PE">Pernambuco</option>
+                <option value="PI">Piauí</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="RN">Rio Grande do Norte</option>
+                <option value="RS">Rio Grande do Sul</option>
+                <option value="RO">Rondônia</option>
+                <option value="RR">Rorâima</option>
+                <option value="SC">Santa Catarina</option>
+                <option value="SP">São Paulo</option>
+                <option value="SE">Sergipe</option>
+                <option value="TO">Tocantins</option>
+        </select><br/>
+        
+        <label>Rua</label>
+        <input required type="text" name="ruaFornecedor"/><br/>
+        
+        <label>Numero</label>
+        <input required type="number" min="0" name="numeroFornecedor"/><br/>
+        
+        <label>Complemento</label>
+        <input type="text" name="complementoFornecedor"/><br/>
+        
+        <input type="submit" name="addFornecedor" value="Adicionar Fornecedor"/>
+    </form> 
+    
+    <h2>Lista</h2>
+        
+        <table border="1">
+            <tr>
+                <th>Índice</th>
+                <th>Nome</th>
+                <th>CNPJ</th>
+                <th>Razão Social</th>
+                <th>Email</th>
+                <th>Telefone</th>
+                <th>Cidade</th>
+                <th>Estado</th>
+                <th>Rua</th>
+                <th>Nº</th>
+                <th>Complemento</th>
+            </tr>
+            
+            <% if(request.getParameter("alterarFornecedor") == null) {%>
+            <%for (int i=0; i<BaseDadosFornecedorArrayList.getFornecedores().size(); i++){%>
+                <%FornecedorArrayList fornecedor= BaseDadosFornecedorArrayList.getFornecedores().get(i);%>
+                <tr>
+                    <td><%=i%></td>
+                    <td><%=fornecedor.getNome()%></td>
+                    <td><%=fornecedor.getCnpj()%></td>
+                    <td><%=fornecedor.getRazao()%></td>
+                    <td><%=fornecedor.getEmail()%></td>
+                    <td><%=fornecedor.getTelefone()%></td>
+                    <td><%=fornecedor.getCidade()%></td>
+                    <td><%=fornecedor.getEstado()%></td>
+                    <td><%=fornecedor.getRua()%></td>
+                    <td><%=fornecedor.getNumero()%></td>
+                    <td><%=fornecedor.getComplemento()%></td>
+                    
+                    <td>
+                    <form>
+                        <input type="hidden" name="i" value="<%=i%>"/>
+                        <input type="submit" name="removerFornecedor" value="Excluir"/>
+                        <input type="submit" name="alterarFornecedor" value="Alterar"/>
+                    </form>
+                </td>
+                </tr>
+                
+                 <%}}
+             else {
+              for (int i=0; i<BaseDadosFornecedorArrayList.getFornecedores().size(); i++){
+                FornecedorArrayList fornecedor = BaseDadosFornecedorArrayList.getFornecedores().get(i);
+                if(i != Integer.parseInt(request.getParameter("i"))){%>
+                    <tr>
+                        <td><%=i%></td>
+                        <td><%=fornecedor.getNome()%></td>
+                        <td><%=fornecedor.getCnpj()%></td>
+                        <td><%=fornecedor.getRazao()%></td>
+                        <td><%=fornecedor.getEmail()%></td>
+                        <td><%=fornecedor.getTelefone()%></td>
+                        <td><%=fornecedor.getCidade()%></td>
+                        <td><%=fornecedor.getEstado()%></td>
+                        <td><%=fornecedor.getRua()%></td>
+                        <td><%=fornecedor.getNumero()%></td>
+                        <td><%=fornecedor.getComplemento()%></td>
+                    <td>
+                        <form>
+                            <input type="hidden" name="i" value="<%=i%>"/>
+                            <input type="submit" name="removerFornecedor" value="Excluir"/>
+                            <input type="submit" name="alterarFornecedor" value="Alterar"/>
+                        </form>
+                    </td>
+                    </tr>
+                    <%}else {%>
+                     <tr>
+                        <form>
+                            <td><%=i%></td>
+                            <td><input type="text" name="nomeFornecedor" value="<%=fornecedor.getNome()%>"></td>
+                            <td><input type="text" name="cnpjFornecedor" value="<%=fornecedor.getCnpj()%>"></td>
+                            <td><input type="text" name="razaoFornecedor" value="<%=fornecedor.getRazao()%>"></td>
+                            <td><input type="text" name="emailFornecedor" value="<%=fornecedor.getEmail()%>"></td>
+                            <td><input type="text" name="telefoneFornecedor" value="<%=fornecedor.getTelefone()%>"></td>
+                            <td><input type="text" name="cidadeFornecedor" value="<%=fornecedor.getCidade()%>"></td>
+                            <td><input type="text" name="estadoFornecedor" value="<%=fornecedor.getEstado()%>"></td>
+                            <td><input type="text" name="ruaFornecedor" value="<%=fornecedor.getRua()%>"></td>
+                            <td><input type="text" name="numeroFornecedor" value="<%=fornecedor.getNumero()%>"></td>
+                            <td><input type="text" name="numeroComplemento" value="<%=fornecedor.getComplemento()%>"></td>
+
+                            <input type="hidden" name="i" value="<%=i%>"/>
+                            <td><input type="submit" value="Salvar Alterações" name="salvarFornecedor"</td>
+                        </form>
+                    </tr>
+                            
+        <%}}}%>
+        
+        </table>
+</div>
