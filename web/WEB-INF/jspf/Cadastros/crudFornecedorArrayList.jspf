@@ -6,7 +6,7 @@
     
     <%try {
         if(request.getParameter("addFornecedor") != null) {
-
+            
              String nomeFornecedor = request.getParameter("nomeFornecedor");
              String cnpjFornecedor = request.getParameter("cnpjFornecedor");
              String razaoFornecedor = request.getParameter("razaoFornecedor");
@@ -18,9 +18,15 @@
              String numeroFornecedor = request.getParameter("numeroFornecedor");
              String complementoFornecedor = request.getParameter("complementoFornecedor");
              
+             if (cnpjFornecedor.matches("([0-9]{2}[\\.]?[0-9]{3}[\\.]?[0-9]{3}[\\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\\.]?[0-9]{3}[\\.]?[0-9]{3}[-]?[0-9]{2})") && telefoneFornecedor.length() > 13){
              FornecedorArrayList fornecedor = new FornecedorArrayList();
              fornecedor.setNome(nomeFornecedor);
-             fornecedor.setCnpj(cnpjFornecedor);
+             
+             
+                fornecedor.setCnpj(cnpjFornecedor);%>
+                <script>alert("CNPJOK");</script><%
+             
+                
              fornecedor.setRazao(razaoFornecedor);
              fornecedor.setEmail(emailFornecedor);
              fornecedor.setTelefone(telefoneFornecedor);
@@ -29,8 +35,10 @@
              fornecedor.setRua(ruaFornecedor);
              fornecedor.setNumero(numeroFornecedor);
              fornecedor.setComplemento(complementoFornecedor);
-             BaseDadosFornecedorArrayList.getFornecedores().add(fornecedor);
-
+             BaseDadosFornecedorArrayList.getFornecedores().add(fornecedor);}
+             
+             else {%>
+             <script>alert("CNPJ ou telefone inválido");</script><%}
              
          } else if (request.getParameter("removerFornecedor") != null){
              int i = Integer.parseInt(request.getParameter("i"));
@@ -40,7 +48,8 @@
         else if (request.getParameter("salvarFornecedor") != null) {
              
               int index = Integer.parseInt(request.getParameter("i"));
-             
+              
+              
               String nomeFornecedor = request.getParameter("nomeFornecedor");
               String cnpjFornecedor = request.getParameter("cnpjFornecedor");
               String razaoFornecedor = request.getParameter("razaoFornecedor");
@@ -49,10 +58,11 @@
               String cidadeFornecedor = request.getParameter("cidadeFornecedor");
               String estadoFornecedor = request.getParameter("estadoFornecedor");
               String ruaFornecedor = request.getParameter("ruaFornecedor");
-              String numeroFornecedor = request.getParameter("nomeFornecedor");
+              String numeroFornecedor = request.getParameter("numeroFornecedor");
               String complementoFornecedor = request.getParameter("nomeFornecedor");
             
-                 
+            if (cnpjFornecedor.matches("([0-9]{2}[\\.]?[0-9]{3}[\\.]?[0-9]{3}[\\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\\.]?[0-9]{3}[\\.]?[0-9]{3}[-]?[0-9]{2})") && telefoneFornecedor.length() > 13){  
+                
              FornecedorArrayList fornecedor = new FornecedorArrayList();
                 
              fornecedor.setNome(nomeFornecedor);
@@ -67,7 +77,9 @@
              fornecedor.setComplemento(complementoFornecedor);
              BaseDadosFornecedorArrayList.getFornecedores().set(index, fornecedor);
              
-             
+            }
+            else {%>
+             <script>alert("CNPJ ou telefone inválido");</script><%}
          }
     } catch(Exception ex) {%>
         <h2>Erro ao processar o comando: <%=ex.getMessage()%></h2>
@@ -138,7 +150,7 @@
     
     <h2>Lista</h2>
         
-        <table border="1">
+    <table id="tabela" style="margin-bottom: 150px;" class="table table-bordered table-sm ">
             <tr>
                 <th>Índice</th>
                 <th>Nome</th>
@@ -207,16 +219,16 @@
                      <tr>
                         <form>
                             <td><%=i%></td>
-                            <td><input type="text" name="nomeFornecedor" value="<%=fornecedor.getNome()%>"></td>
-                            <td><input type="text" name="cnpjFornecedor" value="<%=fornecedor.getCnpj()%>"></td>
-                            <td><input type="text" name="razaoFornecedor" value="<%=fornecedor.getRazao()%>"></td>
-                            <td><input type="text" name="emailFornecedor" value="<%=fornecedor.getEmail()%>"></td>
-                            <td><input type="text" name="telefoneFornecedor" value="<%=fornecedor.getTelefone()%>"></td>
-                            <td><input type="text" name="cidadeFornecedor" value="<%=fornecedor.getCidade()%>"></td>
-                            <td><input type="text" name="estadoFornecedor" value="<%=fornecedor.getEstado()%>"></td>
-                            <td><input type="text" name="ruaFornecedor" value="<%=fornecedor.getRua()%>"></td>
-                            <td><input type="text" name="numeroFornecedor" value="<%=fornecedor.getNumero()%>"></td>
-                            <td><input type="text" name="numeroComplemento" value="<%=fornecedor.getComplemento()%>"></td>
+                            <td><input type="text" class="campo-tabela" name="nomeFornecedor" value="<%=fornecedor.getNome()%>"></td>
+                            <td><input type="text" class="campo-tabela" name="cnpjFornecedor" onkeypress='return event.charCode >= 48 && event.charCode <= 57' data-mask="00.000.000/0000-00" value="<%=fornecedor.getCnpj()%>"></td>
+                            <td><input type="text" class="campo-tabela" name="razaoFornecedor" value="<%=fornecedor.getRazao()%>"></td>
+                            <td><input type="text" class="campo-tabela" name="emailFornecedor" value="<%=fornecedor.getEmail()%>"></td>
+                            <td><input type="text" class="campo-tabela" name="telefoneFornecedor" data-mask='(00) 0000-00000' value="<%=fornecedor.getTelefone()%>"></td>
+                            <td><input type="text" class="campo-tabela" name="cidadeFornecedor" value="<%=fornecedor.getCidade()%>"></td>
+                            <td><input type="text" class="campo-tabela" name="estadoFornecedor" value="<%=fornecedor.getEstado()%>"></td>
+                            <td><input type="text" class="campo-tabela" name="ruaFornecedor" value="<%=fornecedor.getRua()%>"></td>
+                            <td><input type="text" class="campo-tabela" name="numeroFornecedor" value="<%=fornecedor.getNumero()%>"></td>
+                            <td><input type="text" class="campo-tabela" name="complementoFornecedor" value="<%=fornecedor.getComplemento()%>"></td>
 
                             <input type="hidden" name="i" value="<%=i%>"/>
                             <td><input type="submit" value="Salvar Alterações" name="salvarFornecedor"</td>

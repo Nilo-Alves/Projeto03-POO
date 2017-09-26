@@ -274,9 +274,6 @@ nav.navbar .navbar-brand{
 	text-align: center;
 	width: 100%;
 	text-decoration: none;
-
-  
-  
 }
 
 html {
@@ -331,4 +328,13 @@ body {
 #btn-nav:hover {
 	background: rgba(255, 255, 255, 0.6);
 	cursor: pointer;
+}
+
+.campo-tabela {
+	width: 70px;
+}
+
+.tabela .table .table-sm {
+	text-align: center; 
+	
 }
