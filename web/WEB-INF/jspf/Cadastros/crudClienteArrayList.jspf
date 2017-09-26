@@ -1,0 +1,27 @@
+<%@page import="Cadastros.ClienteArrayList"%>
+<%@page import="Repositorio.BaseDadosClienteArrayList"%>
+<%@ page pageEncoding="UTF-8" %>
+<div class="container">
+    <h2>Cadastro de Cliente com ArrayList</h2>
+    <form>
+        <label>Nome</label>
+        <input type="text" name="nomeCliente"/><br/>
+        
+        <label>CPF</label>
+        <input type="text" name="cpfCliente"/><br/>
+        
+        <label>RG</label>
+        <input type="text" name="rgCliente"/><br/> 
+        
+        <label>E-mail</label>
+        <input type="text" name="emailCliente"/><br/>  
+        
+        <label>Telefone</label>
+        <input type="text" name="telefoneCliente"/><br/>  
+        
+        <label>Rua</label>
+        <input type="text" name="ruaCliente"/><br/>  
+        
+        <input type="submit" name="addCliente" value="Adicionar Cliente"/>
+    </form>
+</div>
