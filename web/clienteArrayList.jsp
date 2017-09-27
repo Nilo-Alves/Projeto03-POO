@@ -9,7 +9,7 @@
 <html>
     
     <head>
-        <title>HOME | Smart Data</title>
+        <title>CLIENTE | Smart Data</title>
         <%@include file="WEB-INF/jspf/head.jspf" %>
         
     </head>

@@ -24,8 +24,7 @@
              fornecedor.setNome(nomeFornecedor);
              
              
-                fornecedor.setCnpj(cnpjFornecedor);%>
-                <script>alert("CNPJOK");</script><%
+                fornecedor.setCnpj(cnpjFornecedor);
              
                 
              fornecedor.setRazao(razaoFornecedor);

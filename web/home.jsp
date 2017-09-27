@@ -35,9 +35,9 @@
       <%int dadosFornecedor;
       dadosFornecedor = BaseDadosFornecedorArrayList.getFornecedores().size();%>
 
-      <script>alert(<%=dadosCliente%>);</script>
-      <script>alert(<%=dadosFornecedor%>);</script>
-      <script>alert(<%=dadosCliente + dadosFornecedor%>);</script>
+      
+
+      <input type="hidden" name="xyz" value='<%=request.getParameter("dadosCliente") %>' >
 
         
 	<div class="jumbotron jumbotron-fluid">
@@ -107,7 +107,7 @@
           <h3 class="hidden" id="txt-grafico">Nesse momento temos <span style="font-size: 170%;"><b><%=dadosCliente + dadosFornecedor%></span> cadastros registrados.</b></h3>
 
           
-          <button type="button" id="btn-grafico" onclick="javascript:void(0)" class="btn hidden"><a href="#">COMECE AGORA</a></button>
+          <button type="button" id="btn-grafico" onclick="javascript:void(0)" class="btn hidden"><a href="clienteArrayList.jsp">COMECE AGORA</a></button>
           <!-- "javascript:window.location.href='http://www.google.com/'" -->
 
         </div>
@@ -251,6 +251,89 @@
 
 
 <%@include file="WEB-INF/jspf/footer.jspf" %>
+<script type="text/javascript">
 
+ $(window).on('scroll', function() {
+             var y_scroll_pos = window.pageYOffset;
+             var scroll_pos_test = 475;
+
+              if(y_scroll_pos > scroll_pos_test) {
+
+                $("#txt-create").removeClass('hidden');
+                $("#txt-update").removeClass('hidden');
+                $("#txt-read").removeClass('hidden');
+                $("#txt-delete").removeClass('hidden');
+
+                $("#txt-create").addClass('animated fadeInDown');
+                $("#txt-update").addClass('animated fadeInDown');
+                $("#txt-read").addClass('animated fadeInDown');
+                $("#txt-delete").addClass('animated fadeInDown');
+              }
+
+              var scroll_pos_test = 550;
+
+              if (y_scroll_pos > scroll_pos_test) {
+                $("#desc-create").removeClass('hidden');
+                $("#desc-read").removeClass('hidden');
+                $("#desc-update").removeClass('hidden');
+                $("#desc-delete").removeClass('hidden');
+
+                $("#desc-create").addClass('animated fadeInUp');
+                $("#desc-read").addClass('animated fadeInUp');
+                $("#desc-update").addClass('animated fadeInUp');
+                $("#desc-delete").addClass('animated fadeInUp');
+              }
+
+              var scroll_pos_test = 1000;
+
+               if (y_scroll_pos > scroll_pos_test) {
+                $("#grafico").removeClass('hidden');
+                $("#txt-grafico").removeClass('hidden');
+                $("#btn-grafico").removeClass('hidden');
+
+
+                if (flag == false) {
+                    new Chart(document.getElementById("grafico"), {
+
+                          type: 'doughnut',
+                          data: {
+                            labels: ["Clientes", "Fornecedores"],
+                            datasets: [
+                              {
+                                label: "Nosso dados",
+                                backgroundColor: ["#c41f05", "#f96f39"],
+                                data: [<%=dadosCliente%>, <%=dadosFornecedor%>],
+                              }
+                            ]
+                          },
+                          options: {
+                            title: {
+                              display: false
+                              
+                            }
+                          }
+                      });
+
+                    flag = true;
+                }
+
+                $("#txt-grafico").addClass('animated fadeInRight');
+                $("#btn-grafico").addClass('animated fadeInRight');
+               }
+
+               var scroll_pos_test = 1650;
+
+               if (y_scroll_pos > scroll_pos_test) {
+                $(".divisoria").removeClass('hidden');
+                $(".divisoria").addClass('animated fadeIn');
+              }
+
+
+
+           });
+
+Chart.defaults.global.animation.duration = 3000;
+Chart.defaults.global.animation.easing = 'easeOutBounce';
+</script>
 </body>
 </html>

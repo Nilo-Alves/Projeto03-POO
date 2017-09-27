@@ -12,10 +12,10 @@
         <a class="nav-link" href="home.jsp"><b>Home</b></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="cliente.jsp"><b>GERENCIAR CLIENTES</b></a>
+        <a class="nav-link" href="clienteArrayList.jsp"><b>GERENCIAR CLIENTES</b></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="fornecedor.jsp"><b>GERENCIAR FORNECEDORES</b></a>
+        <a class="nav-link" href="fornecedorArrayList.jsp"><b>GERENCIAR FORNECEDORES</b></a>
       </li>
     </ul>
 

@@ -3,7 +3,7 @@
 <%@ page pageEncoding="UTF-8" %>
 <div class="container-fluid" id="client-block">
 <div class="container">
-    <h2 style="padding-top: 30px; padding-bottom: 20px;">Cadastro de Cliente com ArrayList</h2>
+    <h2 style="padding-top: 40px; padding-bottom: 50px;">Cadastro de Cliente</h2>
     
     <%try {
         if(request.getParameter("addCliente") != null) {
@@ -22,7 +22,7 @@
              if (cpfCliente.matches("([0-9]{2}[\\.]?[0-9]{3}[\\.]?[0-9]{3}[\\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\\.]?[0-9]{3}[\\.]?[0-9]{3}[-]?[0-9]{2})") && telefoneCliente.length() > 13){
                  
              
-               %><script>alert("CPFOK");</script><%
+               
                    
              ClienteArrayList cliente = new ClienteArrayList();
              cliente.setNome(nomeCliente);
@@ -63,7 +63,7 @@
             if (cpfCliente.matches("([0-9]{2}[\\.]?[0-9]{3}[\\.]?[0-9]{3}[\\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\\.]?[0-9]{3}[\\.]?[0-9]{3}[-]?[0-9]{2})") && telefoneCliente.length() > 13){
                  
              
-               %><script>alert("CPFOK");</script><%     
+                   
              ClienteArrayList cliente = new ClienteArrayList();
                 
              cliente.setNome(nomeCliente);
