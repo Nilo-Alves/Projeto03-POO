@@ -1,8 +1,9 @@
 <%@page import="Cadastros.FornecedorArrayList"%>
 <%@page import="Repositorio.BaseDadosFornecedorArrayList"%>
 <%@ page pageEncoding="UTF-8" %>
+<div class="container-fluid" id="client-block">
 <div class="container">
-    <h2>Cadastro de Fornecedores com ArrayList</h2>
+    <h2 style="padding-top: 40px; padding-bottom: 40px;">Cadastro de Fornecedores</h2>
     
     <%try {
         if(request.getParameter("addFornecedor") != null) {
@@ -86,66 +87,93 @@
     <%}%>
     
     <form>
-        <label>Nome</label>
-        <input required type="text" name="nomeFornecedor"/><br/>
+        <div class="row">
+
+            <div class="form-group col-sm-3">
+                <label for="campo-nome">Nome</label>
+                <input id="campo-nome" class="form-control" required type="text" name="nomeFornecedor"/><br/>
+            </div>
+            <div class="form-group col-sm-3">
+                <label for="campo-cnpj">CNPJ</label>
+                <input id="campo-cnpj" class="form-control" required class="cpf" onkeypress='return event.charCode >= 48 && event.charCode <= 57' data-mask="00.000.000/0000-00" type="text" name="cnpjFornecedor"/><br/>
+            </div>
+
+            <div class="form-group col-sm-3">
+                <label for="campo-razao">Razão Social</label>
+                <input id="campo-razao" class="form-control"  required  type="text" name="razaoFornecedor"/><br/> 
+            </div>
+            
+            <div class="form-group col-sm-3">
+                <label for="campo-email">E-mail</label>
+                <input id="campo-email" class="form-control"  required type="email" name="emailFornecedor"/><br/>  
+            </div>
+        </div>
+
+        <div class="row">
+        <div class="form-group col-sm-4">
+            <label for="campo-telefone">Telefone</label>
+            <input id="campo-telefone" class="form-control"  required type="text" data-mask='(00) 0000-00000' name="telefoneFornecedor"/><br/>  
+        </div>
+
+        <div class="form-group col-sm-4">
+            <label for="campo-cidade">Cidade</label>
+            <input id="campo-cidade" class="form-control"  required type="text" name="cidadeFornecedor"/><br/>
+        </div>
+
+        <div class="form-group col-sm-4">
+            <label for="campo-estado">Estado</label>
+            <select id="campo-estado" class="form-control" required name="estadoFornecedor">
+                <option value="">-- Selecione --</option>
+                    <option value="AC">Acre</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="AP">Amapá</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="BA">Bahia</option>
+                    <option value="CE">Ceará</option>
+                    <option value="DF">Distrito Federal</option>
+                    <option value="ES">Espírito Santo</option>
+                    <option value="GO">Goiás</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MS">Mato Grosso do Sul</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="PA">Pará</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PR">Paraná</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PI">Piauí</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="RO">Rondônia</option>
+                    <option value="RR">Rorâima</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="SE">Sergipe</option>
+                    <option value="TO">Tocantins</option>
+            </select><br/>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="form-group col-sm-3">
+            <label for="campo-rua">Rua</label>
+            <input id="campo-rua" class="form-control" required type="text" name="ruaFornecedor"/><br/>
+        </div>
+        <div class="form-group col-sm-3">
+            <label for="campo-numero">Numero</label>
+            <input id="campo-numero" class="form-control" required type="number" min="0" name="numeroFornecedor"/><br/>
+        </div>
+        <div class="form-group col-sm-3">
+            <label for="campo-complemento">Complemento</label>
+            <input id="campo-complemento" class="form-control" type="text" name="complementoFornecedor"/><br/>
+        </div>
         
-        <label>CNPJ</label>
-        <input required class="cpf" onkeypress='return event.charCode >= 48 && event.charCode <= 57' data-mask="00.000.000/0000-00" type="text" name="cnpjFornecedor"/><br/>
-        
-        <label>Razão Social</label>
-        <input required  type="text" name="razaoFornecedor"/><br/> 
-        
-        <label>E-mail</label>
-        <input required type="email" name="emailFornecedor"/><br/>  
-        
-        <label>Telefone</label>
-        <input required type="text" data-mask='(00) 0000-00000' name="telefoneFornecedor"/><br/>  
-        
-        <label>Cidade</label>
-        <input required type="text" name="cidadeFornecedor"/><br/>
-        
-        <label>Estado</label>
-        <select required name="estadoFornecedor">
-            <option value="">-- Selecione --</option>
-                <option value="AC">Acre</option>
-                <option value="AL">Alagoas</option>
-                <option value="AP">Amapá</option>
-                <option value="AM">Amazonas</option>
-                <option value="BA">Bahia</option>
-                <option value="CE">Ceará</option>
-                <option value="DF">Distrito Federal</option>
-                <option value="ES">Espírito Santo</option>
-                <option value="GO">Goiás</option>
-                <option value="MA">Maranhão</option>
-                <option value="MT">Mato Grosso</option>
-                <option value="MS">Mato Grosso do Sul</option>
-                <option value="MG">Minas Gerais</option>
-                <option value="PA">Pará</option>
-                <option value="PB">Paraíba</option>
-                <option value="PR">Paraná</option>
-                <option value="PE">Pernambuco</option>
-                <option value="PI">Piauí</option>
-                <option value="RJ">Rio de Janeiro</option>
-                <option value="RN">Rio Grande do Norte</option>
-                <option value="RS">Rio Grande do Sul</option>
-                <option value="RO">Rondônia</option>
-                <option value="RR">Rorâima</option>
-                <option value="SC">Santa Catarina</option>
-                <option value="SP">São Paulo</option>
-                <option value="SE">Sergipe</option>
-                <option value="TO">Tocantins</option>
-        </select><br/>
-        
-        <label>Rua</label>
-        <input required type="text" name="ruaFornecedor"/><br/>
-        
-        <label>Numero</label>
-        <input required type="number" min="0" name="numeroFornecedor"/><br/>
-        
-        <label>Complemento</label>
-        <input type="text" name="complementoFornecedor"/><br/>
-        
-        <input type="submit" name="addFornecedor" value="Adicionar Fornecedor"/>
+        <div class="col-sm-3">
+            <input id="btn-salvar-fornecedor" type="submit" name="addFornecedor" value="Adicionar Fornecedor"/>
+        </div>
+    </div>
     </form> 
     
     <h2>Lista</h2>
@@ -156,7 +184,7 @@
                 <th>Nome</th>
                 <th>CNPJ</th>
                 <th>Razão Social</th>
-                <th>Email</th>
+                <th>E-mail</th>
                 <th>Telefone</th>
                 <th>Cidade</th>
                 <th>Estado</th>
@@ -184,8 +212,8 @@
                     <td>
                     <form>
                         <input type="hidden" name="i" value="<%=i%>"/>
-                        <input type="submit" name="removerFornecedor" value="Excluir"/>
-                        <input type="submit" name="alterarFornecedor" value="Alterar"/>
+                        <input id="btn-excluir" type="submit" name="removerFornecedor" value="Excluir"/>
+                        <input id="btn-alterar" type="submit" name="alterarFornecedor" value="Alterar"/>
                     </form>
                 </td>
                 </tr>
@@ -210,8 +238,8 @@
                     <td>
                         <form>
                             <input type="hidden" name="i" value="<%=i%>"/>
-                            <input type="submit" name="removerFornecedor" value="Excluir"/>
-                            <input type="submit" name="alterarFornecedor" value="Alterar"/>
+                            <input id="btn-excluir" type="submit" name="removerFornecedor" value="Excluir"/>
+                            <input id="btn-alterar" type="submit" name="alterarFornecedor" value="Alterar"/>
                         </form>
                     </td>
                     </tr>
@@ -231,11 +259,12 @@
                             <td><input type="text" class="campo-tabela" name="complementoFornecedor" value="<%=fornecedor.getComplemento()%>"></td>
 
                             <input type="hidden" name="i" value="<%=i%>"/>
-                            <td><input type="submit" value="Salvar Alterações" name="salvarFornecedor"</td>
+                            <td><input id="btn-salvarcliente" type="submit" value="Salvar Alterações" name="salvarFornecedor"</td>
                         </form>
                     </tr>
                             
         <%}}}%>
         
         </table>
+</div>
 </div>

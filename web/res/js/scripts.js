@@ -46,12 +46,12 @@ var flag = false;
 
                           type: 'doughnut',
                           data: {
-                            labels: ["Clientes", "Funcionários"],
+                            labels: ["Clientes", "Fornecedores"],
                             datasets: [
                               {
                                 label: "Nosso dados",
                                 backgroundColor: ["#c41f05", "#f96f39"],
-                                data: [2478,5267]
+                                data: ["<%=dadosCliente%>", "<%=dadosFornecedor%>"]
                               }
                             ]
                           },

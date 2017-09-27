@@ -5,6 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="Repositorio.BaseDadosClienteArrayList"%>
+<%@page import="Repositorio.BaseDadosFornecedorArrayList"%>
 
 
 
@@ -19,13 +21,24 @@
     </head>
 
     <body>
-       
-       
+
        
 
         <%@include file="WEB-INF/jspf/header.jspf" %>
         
-        
+
+       <%int dadosCliente;
+       dadosCliente = BaseDadosClienteArrayList.getClientes().size();%>
+
+       
+
+      <%int dadosFornecedor;
+      dadosFornecedor = BaseDadosFornecedorArrayList.getFornecedores().size();%>
+
+      <script>alert(<%=dadosCliente%>);</script>
+      <script>alert(<%=dadosFornecedor%>);</script>
+      <script>alert(<%=dadosCliente + dadosFornecedor%>);</script>
+
         
 	<div class="jumbotron jumbotron-fluid">
   <div class="container">
@@ -91,7 +104,7 @@
           <canvas class="hidden" id="grafico" width="1000" height="450"></canvas>
         </div>
         <div class="col-sm-6">
-          <h3 class="hidden" id="txt-grafico">Nesse momento temos <span style="font-size: 170%;"><b>XX</span> cadastros registrados.</b></h3>
+          <h3 class="hidden" id="txt-grafico">Nesse momento temos <span style="font-size: 170%;"><b><%=dadosCliente + dadosFornecedor%></span> cadastros registrados.</b></h3>
 
           
           <button type="button" id="btn-grafico" onclick="javascript:void(0)" class="btn hidden"><a href="#">COMECE AGORA</a></button>

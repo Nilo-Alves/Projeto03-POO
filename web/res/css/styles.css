@@ -383,3 +383,20 @@ body {
 	line-height: 22px;
 	color: white;
 }
+
+#btn-salvar-fornecedor {
+	margin-top: 25px;
+	background: none;
+	border: 2px solid #f96f39;
+	line-height: 22px;
+	font-size: 150%;
+	height: 50px;
+	width: 300px;
+}
+
+#btn-salvar-fornecedor:hover{
+	background: #f96f39;
+	cursor: pointer;
+	color: white;
+	transition: all 0.2s linear;
+}
