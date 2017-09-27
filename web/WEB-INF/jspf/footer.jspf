@@ -5,8 +5,8 @@
             <a href="home.jsp"><h4>HOME</h4></a>
             <a href="#second-block"><h4>SOBRE</h4></a>
             <a href="#fourth-block"><h4>EQUIPE</h4></a>
-            <a href="cliente.jsp"><h4>GERENCIAR CLIENTES</h4></a>
-            <a href="#fornecedor.jsp"><h4>GERENCIAR FORNECEDORES</h4></a>
+            <a href="clienteArrayList.jsp"><h4>GERENCIAR CLIENTES</h4></a>
+            <a href="fornecedorArrayList.jsp"><h4>GERENCIAR FORNECEDORES</h4></a>
   </nav>
 
 </div>
