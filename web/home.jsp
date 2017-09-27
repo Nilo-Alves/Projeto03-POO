@@ -123,7 +123,7 @@
         <img src="res/imgs/vinicius.png" height="350" width="300">
         <div class="txt-membro">
             <h4><span id="letra-membro">V</span>inícius <span id="letra-membro">L</span>ima</h4>
-            <h4>Front-End Developer</h4>
+            <h4>Full-Stack Developer</h4>
             
             <div class="social">
               <a class="fa fa-facebook " href="https://www.facebook.com/vinicius.lima.1671" target="_blank" href="#"></a>
@@ -188,66 +188,6 @@
 
 </div>
 
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 style="text-align: center;" class="modal-title" id="exampleModalLabel">FAÇA SEU LOGIN</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form>
-		  <div class="form-group">
-		    <label for="usuario-login">Usuário</label>
-		    <input required type="text" class="form-control" id="usuario-login" name="usuario-login">
-		  </div>
-		  <div class="form-group">
-		    <label for="senha-login">Senha</label>
-		    <input required type="password" class="form-control" id="senha-login" name="senha-login">
-		  </div>
-		
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-        <button type="submit" class="btn btn-success">LOGAR</button>
-    </form>
-          <%    String user = "admin";
-                String password = "admin";
-                
-                
-                
-                
-                try {
-                    if (request.getParameter("usuario-login")!= null || request.getParameter("senha-login")!= null){
-                    
-                    if (request.getParameter("usuario-login").equals(user) || request.getParameter("senha-login").equals(password)){
-                    
-                    
-                 %>
-                         
-                     <script>window.location = "menu.jsp";</script>
-                     
-                 <%
-                     }
-                     if (!request.getParameter("usuario-login").equals(user) || !request.getParameter("senha-login").equals(password)){
-                             %>
-                             <script> alert("Usuário ou senha incorretos");</script>
-                             <%
-                                 
-                        }
-                    } 
-                }
-                catch (Exception ex) {
-                   
-                    }
-                 %>
-             
-      </div>
-    </div>
-  </div>
-</div>
 
 
 <%@include file="WEB-INF/jspf/footer.jspf" %>
